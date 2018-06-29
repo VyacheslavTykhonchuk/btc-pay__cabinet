@@ -1,0 +1,19 @@
+@mixin linkHover {
+    transition: all 0.4s;
+
+    &:hover {
+        color: hsl(191, 100%, 50%);
+    }
+}
+
+@mixin svgHover {
+    path {
+        transition: all 0.4s;
+    }
+
+    &:hover {
+        path {
+            fill: hsl(191, 100%, 50%);
+        }
+    }
+}

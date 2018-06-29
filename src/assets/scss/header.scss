@@ -1,0 +1,107 @@
+.main_header {
+    padding: 30px 62px 30px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.14);
+
+    &__left {
+        display: flex;
+        align-items: center;
+
+        &__burger__icon {
+            display: flex;
+            cursor: pointer;
+
+            @include svgHover;
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 100px;
+                width: 1px;
+                height: 100%;
+                background: #D8D8D8;
+                pointer-events: none;
+            }
+
+            & + * {
+                margin-left: 75px;
+            }
+        }
+
+        &__user_info {
+            display: flex;
+            align-items: center;
+
+            * {
+                cursor: pointer;
+            }
+
+            * + * {
+                margin-left: 23px;
+            }
+
+            &__initials {
+                width: 40px;
+                height: 40px;
+                background-color: #00D1FF;
+                color: white;
+                border-radius: 7px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &__name {
+                color: #D4D4D4;
+                font-size: 14px;
+
+                @include linkHover;
+            }
+
+            &__bell_icon {
+                display: flex;
+
+                @include svgHover;
+            }
+        }
+    }
+
+    &__center {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    &__right {
+        &__search {
+            display: flex;
+
+            * + * {
+                margin-left: 33px;
+            }
+
+            &__icon {
+                display: flex;
+
+                @include svgHover;
+            }
+
+            &__input {
+                input {
+                    border: none;
+                    background: transparent;
+                    outline: none;
+                    width: 150px;
+
+                    &::placeholder {
+                        color: #D4D4D4;
+                    }
+                }
+            }
+        }
+    }
+}
