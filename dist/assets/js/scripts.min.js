@@ -9,9 +9,10 @@
         modalWindow: $('.modal'),
 
         init: function () {
-
+            btcPay.headerInit();
         },
-
+        headerInit: function name(params) {
+        },
     });
 
     btcPay.init();
