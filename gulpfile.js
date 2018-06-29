@@ -39,7 +39,7 @@ gulp.task('fileinclude', function () {
     gulp.src(['src/html/*.html'])
         .pipe(fileinclude({
             prefix: '@@',
-            basepath: 'html/'
+            basepath: 'src/html/'
         }))
         .pipe(gulp.dest('dist'))
         .pipe(livereload({ start: true }));
@@ -47,7 +47,7 @@ gulp.task('fileinclude', function () {
 
 // Styles
 gulp.task('sass', function () {
-    gulp.src('src/assets/scss/*.scss')
+    gulp.src('src/assets/scss/style.scss')
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(autoprefixer({
             browsers: ['last 10 versions'],
@@ -83,7 +83,7 @@ gulp.task('images', function () {
 gulp.task('watch', function () {
     gulp.watch(['src/assets/scss/*.scss'], ['sass']);
     gulp.watch(['src/assets/js/*.js'], ['scripts']);
-    gulp.watch(['src/html/*.html'], ['fileinclude']);
+    gulp.watch(['src/html/**/*.html'], ['fileinclude']);
     gulp.watch(['src/assets/fonts/*.*'], ['fonts']);
     gulp.watch(['src/assets/img/**/*'], ['images']);
 });
