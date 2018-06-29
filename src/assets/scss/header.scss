@@ -17,7 +17,16 @@
 
             @include svgHover;
 
-            &::after {
+            & + * {
+                margin-left: 75px;
+            }
+        }
+
+        &__user_info {
+            display: flex;
+            align-items: center;
+
+            &::before {
                 content: '';
                 position: absolute;
                 top: 0;
@@ -27,15 +36,6 @@
                 background: #D8D8D8;
                 pointer-events: none;
             }
-
-            & + * {
-                margin-left: 75px;
-            }
-        }
-
-        &__user_info {
-            display: flex;
-            align-items: center;
 
             * {
                 cursor: pointer;
@@ -118,9 +118,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        transform: translate(-110%, 0);
+        transition: all 0.4s;
 
         &__close_icon {
             cursor: pointer;
+            transform: scale(0);
+            transition: all 0.4s 0.1s;
 
             & + * {
                 margin-top: 95px;
@@ -167,7 +171,8 @@
                         }
                     }
                 }
-                &__balances{
+
+                &__balances {
                     &:hover {
                         .main_header__aside__nav__item__icon {
                             svg, path, rect, circle {
@@ -180,6 +185,7 @@
                         }
                     }
                 }
+
                 &__icon {
                     display: flex;
 
@@ -216,6 +222,20 @@
                     }
                 }
             }
+        }
+    }
+
+    &.aside_visible {
+        .main_header__aside {
+            transform: translate(0, 0);
+        }
+
+        .main_header__left__burger__icon {
+            transform: scale(0);
+        }
+
+        .main_header__aside__close_icon {
+            transform: scale(1);
         }
     }
 }

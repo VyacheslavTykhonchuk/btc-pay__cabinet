@@ -12,6 +12,16 @@
             btcPay.headerInit();
         },
         headerInit: function name(params) {
+            let mainHeader = $('#mainHeader'),
+                openAside = $('#openHeaderAside'),
+                closeAside = $('#closeHeaderAside');
+
+            openAside.on('click', function () {
+                mainHeader.addClass('aside_visible');
+            });
+            closeAside.on('click', function () {
+                mainHeader.removeClass('aside_visible');
+            });
         },
     });
 
