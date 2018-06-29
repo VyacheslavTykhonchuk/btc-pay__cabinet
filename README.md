@@ -1,5 +1,5 @@
 # btc-pay__cabinet
 
 To start (in terminal):
-npm install
-gulp
+1. npm install
+2. gulp
