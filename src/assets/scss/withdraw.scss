@@ -1,0 +1,101 @@
+.main__withdraw {
+    padding-bottom: 75px;
+
+    &__content {
+        &__footer {
+            display: flex;
+            margin-top: 50px;
+            justify-content: flex-end;
+            padding-right: 30px;
+            align-items: center;
+
+            * + * {
+                margin-left: 35px;
+            }
+
+            &__total {
+                color: #9B9B9B;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            &__currency {
+                color: #4A4A4A;
+                font-size: 20px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.main__table {
+    width: 100%;
+    border-collapse: separate;
+
+    &__head_row {
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.04);
+
+        &__sort {
+            display: flex;
+            justify-content: center;
+
+            * + * {
+                margin-left: 10px;
+            }
+        }
+
+        th {
+            border-top: 35px solid transparent;
+            border-bottom: 35px solid transparent;
+            width: calc(100% / 7);
+            background: white;
+
+            a {
+                color: #4A4A4A;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            &:first-child {
+                border-top-left-radius: 10px;
+                border-bottom-left-radius: 10px;
+            }
+
+            &:last-child {
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+        }
+    }
+
+    tr {
+        td {
+            border-top: 29px solid transparent;
+            border-bottom: 29px solid transparent;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+            color: #9B9B9B;
+            line-height: 26px;
+        }
+
+        &:nth-child(2n+1) {
+            background: white;
+
+            td {
+                border-top: 15px solid transparent;
+                border-bottom: 15px solid transparent;
+
+                &:first-child {
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                }
+
+                &:last-child {
+                    border-top-right-radius: 10px;
+                    border-bottom-right-radius: 10px;
+                }
+            }
+        }
+    }
+}
