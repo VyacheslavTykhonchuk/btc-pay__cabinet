@@ -1,0 +1,43 @@
+.main__stores {
+    &__exchange_rates {
+        display: flex;
+        flex-direction: column;
+
+        &__title {
+            font-weight: 600;
+            color: hsla(226, 25%, 36%, 0.5);
+
+            & + * {
+                margin-top: 16px;
+            }
+        }
+
+        &__content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__item {
+                display: flex;
+
+                &__currencies_rates {
+                    display: flex;
+                    flex-direction: column;
+
+                    & + * {
+                        margin-left: 30px;
+                    }
+
+                    span {
+                        display: inline-block;
+                    }
+                }
+
+                &__graphs {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
+}

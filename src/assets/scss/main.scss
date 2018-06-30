@@ -1,8 +1,15 @@
-body{
+body {
     font-family: "FuturaPt";
     background: #F6F7FB;
 }
+
 a {
     text-decoration: none;
     cursor: pointer;
+}
+
+.wrap {
+    max-width: 1275px;
+    margin: 0 auto;
+    padding: 40px 0 0 2.5%;
 }
