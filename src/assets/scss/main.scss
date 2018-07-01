@@ -23,8 +23,12 @@ main {
 
 .wrap {
     max-width: 1275px;
-    margin: 0 auto;
-    padding: 40px 0 0 2.5%;
+    margin-left: 100px;
+    padding: 40px 2em 0 0;
+
+    @media (min-width:1445px) {
+        margin: 0 auto !important;
+    }
 }
 
 .main {
