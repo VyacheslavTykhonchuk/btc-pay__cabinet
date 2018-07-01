@@ -1,0 +1,282 @@
+.main__settings {
+    &__content {
+        grid-template-columns: 1.1fr 1.5fr 0.65fr;
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__wrap {
+                &__item {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    & + * {
+                        margin-top: 95px;
+                    }
+
+                    h3 {
+                        font-size: 20px;
+                        font-weight: 500;
+                        color: #4A4A4A;
+
+                        & + * {
+                            margin-top: 55px;
+                        }
+                    }
+
+                    &__form {
+                        &__item {
+                            & + * {
+                                margin-top: 42px;
+                            }
+
+                            input {
+                                border: none;
+                                border-bottom: 1px solid #000;
+                                color: #4A4A4A;
+                                font-size: 14px;
+                                outline: none;
+                                width: 100%;
+                                padding-bottom: 7px;
+                                font-weight: normal;
+                            }
+
+                            .error_msg {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.error_msg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 12px;
+
+    > * {
+        margin-top: 20px;
+    }
+
+    &__verificate {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+
+    &__text {
+        color: #FF0000;
+    }
+}
+
+.security {
+    &__content {
+        &__item {
+            & + section {
+                margin-top: 55px;
+            }
+
+            h4 {
+                font-weight: 500;
+                color: #4A4A4A;
+                font-size: 16px;
+                margin: 0;
+
+                & + * {
+                    margin-top: 30px;
+                }
+            }
+
+            .img_text {
+                display: flex;
+
+                * + * {
+                    margin-left: 20px;
+                }
+
+                img {
+                    width: 60px;
+                    height: 60px;
+                }
+
+                span {
+                    color: #4A4A4A;
+                    font-size: 10px;
+                    font-weight: normal;
+                    max-width: 80%;
+                }
+            }
+        }
+    }
+}
+
+.white_list {
+    display: flex;
+
+    > * {
+        width: 50%;
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+
+        input {
+            width: 200px;
+            margin-top: 14px;
+        }
+
+        * + * {
+            margin-top: 30px;
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        margin-top: -51px;
+
+        .save_ip {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+
+            & + * {
+                margin-top: 15px;
+            }
+
+            * + * {
+                margin-left: 8px;
+            }
+
+            span {
+                color: #00D1FF;
+                font-weight: normal;
+                font-size: 16px;
+            }
+        }
+
+        &__list {
+            list-style: none;
+            padding: 0;
+
+            > * + * {
+                margin-top: 2px;
+            }
+
+            &__item {
+                font-size: 14px;
+
+                div {
+                    display: flex;
+                    align-items: center;
+
+                    * + * {
+                        margin-left: 8px;
+                    }
+
+                    a {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.login_history {
+    &__table {
+        tr {
+            th {
+                width: calc(100% / 3);
+                border-top: 0 solid transparent;
+                border-bottom: 33px solid transparent;
+                border-left: 22px solid transparent;
+                text-align: left;
+
+                span {
+                    color: #4A4A4A;
+                    font-size: 12px;
+                }
+            }
+
+            td {
+                text-align: left;
+                color: #4A4A4A;
+                font-size: 12px;
+                border-bottom: 16px solid transparent;
+                border-top: 16px solid transparent;
+                border-left: 22px solid transparent;
+            }
+
+            &:first-child {
+                box-shadow: none;
+            }
+
+            &:nth-child(even) {
+                background: #FAFAFA;
+
+                td {
+                    &:first-child {
+                        border-bottom-left-radius: 10px;
+                        border-top-left-radius: 10px;
+                    }
+
+                    &:last-child {
+                        border-bottom-right-radius: 10px;
+                        border-top-right-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.notification {
+    &__content {
+        &__item {
+            margin-top: 23px !important;
+
+            h5 {
+                font-size: 12px;
+                font-weight: 500;
+                color: #4A4A4A;
+                margin: 0;
+
+                & + * {
+                    margin-top: 22px;
+                }
+            }
+
+            &__list {
+                list-style: none;
+                padding: 0;
+
+                &__item {
+                    & + li {
+                        margin-top: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.stores {
+    .main__settings__content__item {
+        position: relative;
+        padding-bottom: 150px;
+        .account__setting, .security__save, .notification__save {
+            position: absolute;
+            bottom: 50px;
+            margin: 0;
+        }
+    }
+}

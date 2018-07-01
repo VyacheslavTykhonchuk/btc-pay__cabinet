@@ -11,6 +11,7 @@
         init: function () {
             btcPay.initHeader();
             btcPay.initTableDropdown();
+            btcPay.initCheckbox();
         },
         initHeader: function name(params) {
             let main = $('main'),
@@ -39,7 +40,35 @@
                 });
             });
         },
+        initCheckbox: function () {
+            if (!$('.haveCheckbox').length) return false;
 
+            let parent = $('.haveCheckbox'),
+                checkbox = $('.fakeCheckbox'),
+                hiddenCheckbox = $('.hiddenCheckbox');
+
+
+            checkbox.each(function () {
+
+                $(this).on('click', function () {
+                    $(this).toggleClass('checked');
+
+                    if ($(this).closest(parent).find(hiddenCheckbox).prop('checked')) {
+                        $(this).closest(parent).find(hiddenCheckbox).prop('checked', false);
+                    }
+                    else {
+                        $(this).closest(parent).find(hiddenCheckbox).prop('checked', true);
+                    }
+                });
+                if ($(this).closest(parent).find(hiddenCheckbox).prop('checked')) {
+                    $(this).closest(parent).find(checkbox).addClass('checked');
+                }
+                else {
+                    $(this).closest(parent).find(checkbox).removeClass('checked');
+                }
+            });
+
+        },
     });
 
     btcPay.init();

@@ -1,0 +1,428 @@
+@@include('modules/html-head.html',{ "bodyClass": "stores settings_body", "pageTitle": "Settings" }) @@include('modules/header.html',{
+"headerClass": "" })
+<div class="wrap">
+    <main class="main__settings">
+        <section class=" main__section main__settings__content ">
+            <section class="main__section__item main__settings__content__item main__settings__content__item__wrap">
+                <section class=" main__settings__content__item__wrap__item main__settings__content__item__wrap__item_account">
+                    <h3>Account</h3>
+                    <form action="" class="main__settings__content__wrap__item__form main__settings__content__item__wrap__item_account__form">
+                        <div class="main__settings__content__item__wrap__item__form__item main__settings__content__item__wrap__item_account__form__item">
+                            <input type="text" placeholder="Name" name="name" id="name">
+                            <div class="error_msg"></div>
+                        </div>
+
+                        <div class="main__settings__content__item__wrap__item__form__item main__settings__content__item__wrap__item_account__form__item">
+                            <input type="text" placeholder="Last name" name="lastName" id="lastName">
+                            <div class="error_msg"></div>
+                        </div>
+
+                        <div class="main__settings__content__item__wrap__item__form__item main__settings__content__item__wrap__item_account__form__item">
+                            <input type="tel" placeholder="Phone" name="phone" id="phone">
+                            <div class="error_msg"></div>
+                        </div>
+
+                        <div class="main__settings__content__item__wrap__item__form__item main__settings__content__item__wrap__item_account__form__item">
+                            <input type="email" placeholder="Email" name="email" id="email">
+                            <div class="error_msg">
+                                <div class="error_msg__verificate haveCheckbox">
+                                    <div>
+                                        <div class="fakeCheckbox fakeCheckbox_small"></div>
+                                        <input type="checkbox" class="hiddenCheckbox" name="" id="">
+                                    </div>
+                                    <span>
+                                        Verificate
+                                    </span>
+                                </div>
+                                <div class="error_msg__text">
+                                    Resend verification email
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </section>
+                <section class=" main__settings__content__item__wrap__item main__settings__content__item__wrap__item_password">
+                    <h3>Change password</h3>
+                    <form action="" class="main__settings__content__item__wrap__item__form main__settings__content__item__wrap__item_password__form">
+                        <div class="main__settings__content__item__wrap__item__form__item main__settings__content__item__wrap__item_password__form__item">
+                            <input type="password" placeholder="Old password" name="oldPass" id="oldPass">
+                            <div class="error_msg"></div>
+                        </div>
+
+                        <div class="main__settings__content__item__wrap__item__form__item main__settings__content__item__wrap__item_password__form__item">
+                            <input type="password" placeholder="New password" name="newPass" id="newPass">
+                            <div class="error_msg"></div>
+                        </div>
+
+                        <div class="main__settings__content__item__wrap__item__form__item main__settings__content__item__wrap__item_password__form__item">
+                            <input type="password" placeholder="New password" name="newPassValidate" id="newPassValidate">
+                            <div class="error_msg"></div>
+                        </div>
+
+                    </form>
+                </section>
+                <a href="#" class="account__setting btn btn_big btn_big_gradient">Setting</a>
+            </section>
+            <section class="main__section__item main__settings__content__item main__settings__content__item_security security">
+                <section class="main__settings__content__item__wrap__item security__content">
+                    <h3>Security</h3>
+                    <section class="security__content__item security__content__item_auth">
+                        <h4 class="haveCheckbox">
+                            <div>
+                                <div class="fakeCheckbox fakeCheckbox_big"></div>
+                                <input type="checkbox" class="hiddenCheckbox" name="" id="">
+                            </div>
+                            <span>
+                                Two-factor
+                                <br> autentification
+                            </span>
+                        </h4>
+
+                        <div class="img_text">
+                            <img src="/dist/assets/img/QRCode.png" alt="">
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                                voluptate velit esse cillum dolore eu fugiat nulla pariatur</span>
+                        </div>
+                    </section>
+                    <section class="security__content__item security__content__item_white_list">
+                        <h4 class="haveCheckbox">
+                            <div>
+                                <div class="fakeCheckbox fakeCheckbox_big"></div>
+                                <input type="checkbox" class="hiddenCheckbox" name="" id="">
+                            </div>
+                            <span>
+                                White list
+                            </span>
+                        </h4>
+                        <div class="white_list">
+                            <div class="white_list__left main__settings__content__item__wrap__item__form__item">
+                                <input type="text" placeholder="Enter IP here..." name="" id="">
+                                <a href="#" class="btn btn_small btn_small_gradient">Add</a>
+                            </div>
+                            <div class="white_list__right">
+                                <a class="save_ip">
+                                    <span>Save IP</span>
+
+                                    <svg width="6px" height="2px" viewBox="0 0 6 2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                        <desc>Created with Sketch.</desc>
+                                        <defs></defs>
+                                        <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                            <g id="setting" transform="translate(-898.000000, -431.000000)" stroke="#00D1FF">
+                                                <g id="back" transform="translate(901.000000, 432.000000) rotate(-90.000000) translate(-901.000000, -432.000000) translate(900.000000, 430.000000)">
+                                                    <path d="M2,0 L0,2" id="Line"></path>
+                                                    <path d="M0,2 L2,4" id="Line"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <ul class="white_list__right__list">
+                                    <li class="white_list__right__list__item">
+                                        <div>
+                                            <span>192.168.11.13</span>
+                                            <a class="deleteItem" href="#">
+
+                                                <svg width="6px" height="6px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                                    <desc>Created with Sketch.</desc>
+                                                    <defs></defs>
+                                                    <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <g id="setting" transform="translate(-43.000000, -41.000000)" fill="#4A4A4A">
+                                                            <g id="menu">
+                                                                <g id="Menu" transform="translate(43.000000, 41.000000)">
+                                                                    <path d="M-1.54440959,8.38375162 L20.8590523,8.38375162 C21.3177747,8.38375162 21.6896427,8.75561961 21.6896427,9.21434203 L21.6896427,9.21434203 C21.6896427,9.67306445 21.3177747,10.0449324 20.8590523,10.0449324 L-1.54440959,10.0449324 C-2.00313201,10.0449324 -2.375,9.67306445 -2.375,9.21434203 L-2.375,9.21434203 C-2.375,8.75561961 -2.00313201,8.38375162 -1.54440959,8.38375162 Z"
+                                                                        id="Rectangle" transform="translate(9.657321, 9.214342) rotate(-315.000000) translate(-9.657321, -9.214342) "></path>
+                                                                    <path d="M-1.54440959,8.38375162 L20.8590523,8.38375162 C21.3177747,8.38375162 21.6896427,8.75561961 21.6896427,9.21434203 L21.6896427,9.21434203 C21.6896427,9.67306445 21.3177747,10.0449324 20.8590523,10.0449324 L-1.54440959,10.0449324 C-2.00313201,10.0449324 -2.375,9.67306445 -2.375,9.21434203 L-2.375,9.21434203 C-2.375,8.75561961 -2.00313201,8.38375162 -1.54440959,8.38375162 Z"
+                                                                        id="Rectangle" transform="translate(9.657321, 9.214342) rotate(-45.000000) translate(-9.657321, -9.214342) "></path>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="white_list__right__list__item">
+                                        <div>
+                                            <span>192.168.11.13</span>
+                                            <a class="deleteItem" href="#">
+                                                <svg width="6px" height="6px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                                    <desc>Created with Sketch.</desc>
+                                                    <defs></defs>
+                                                    <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <g id="setting" transform="translate(-43.000000, -41.000000)" fill="#4A4A4A">
+                                                            <g id="menu">
+                                                                <g id="Menu" transform="translate(43.000000, 41.000000)">
+                                                                    <path d="M-1.54440959,8.38375162 L20.8590523,8.38375162 C21.3177747,8.38375162 21.6896427,8.75561961 21.6896427,9.21434203 L21.6896427,9.21434203 C21.6896427,9.67306445 21.3177747,10.0449324 20.8590523,10.0449324 L-1.54440959,10.0449324 C-2.00313201,10.0449324 -2.375,9.67306445 -2.375,9.21434203 L-2.375,9.21434203 C-2.375,8.75561961 -2.00313201,8.38375162 -1.54440959,8.38375162 Z"
+                                                                        id="Rectangle" transform="translate(9.657321, 9.214342) rotate(-315.000000) translate(-9.657321, -9.214342) "></path>
+                                                                    <path d="M-1.54440959,8.38375162 L20.8590523,8.38375162 C21.3177747,8.38375162 21.6896427,8.75561961 21.6896427,9.21434203 L21.6896427,9.21434203 C21.6896427,9.67306445 21.3177747,10.0449324 20.8590523,10.0449324 L-1.54440959,10.0449324 C-2.00313201,10.0449324 -2.375,9.67306445 -2.375,9.21434203 L-2.375,9.21434203 C-2.375,8.75561961 -2.00313201,8.38375162 -1.54440959,8.38375162 Z"
+                                                                        id="Rectangle" transform="translate(9.657321, 9.214342) rotate(-45.000000) translate(-9.657321, -9.214342) "></path>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="white_list__right__list__item">
+                                        <div>
+                                            <span>192.168.11.13</span>
+                                            <a class="deleteItem" href="#">
+                                                <svg width="6px" height="6px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                                    <desc>Created with Sketch.</desc>
+                                                    <defs></defs>
+                                                    <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <g id="setting" transform="translate(-43.000000, -41.000000)" fill="#4A4A4A">
+                                                            <g id="menu">
+                                                                <g id="Menu" transform="translate(43.000000, 41.000000)">
+                                                                    <path d="M-1.54440959,8.38375162 L20.8590523,8.38375162 C21.3177747,8.38375162 21.6896427,8.75561961 21.6896427,9.21434203 L21.6896427,9.21434203 C21.6896427,9.67306445 21.3177747,10.0449324 20.8590523,10.0449324 L-1.54440959,10.0449324 C-2.00313201,10.0449324 -2.375,9.67306445 -2.375,9.21434203 L-2.375,9.21434203 C-2.375,8.75561961 -2.00313201,8.38375162 -1.54440959,8.38375162 Z"
+                                                                        id="Rectangle" transform="translate(9.657321, 9.214342) rotate(-315.000000) translate(-9.657321, -9.214342) "></path>
+                                                                    <path d="M-1.54440959,8.38375162 L20.8590523,8.38375162 C21.3177747,8.38375162 21.6896427,8.75561961 21.6896427,9.21434203 L21.6896427,9.21434203 C21.6896427,9.67306445 21.3177747,10.0449324 20.8590523,10.0449324 L-1.54440959,10.0449324 C-2.00313201,10.0449324 -2.375,9.67306445 -2.375,9.21434203 L-2.375,9.21434203 C-2.375,8.75561961 -2.00313201,8.38375162 -1.54440959,8.38375162 Z"
+                                                                        id="Rectangle" transform="translate(9.657321, 9.214342) rotate(-45.000000) translate(-9.657321, -9.214342) "></path>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="white_list__right__list__item">
+                                        <div>
+                                            <span>192.168.11.13</span>
+                                            <a class="deleteItem" href="#">
+                                                <svg width="6px" height="6px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                                    <desc>Created with Sketch.</desc>
+                                                    <defs></defs>
+                                                    <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <g id="setting" transform="translate(-43.000000, -41.000000)" fill="#4A4A4A">
+                                                            <g id="menu">
+                                                                <g id="Menu" transform="translate(43.000000, 41.000000)">
+                                                                    <path d="M-1.54440959,8.38375162 L20.8590523,8.38375162 C21.3177747,8.38375162 21.6896427,8.75561961 21.6896427,9.21434203 L21.6896427,9.21434203 C21.6896427,9.67306445 21.3177747,10.0449324 20.8590523,10.0449324 L-1.54440959,10.0449324 C-2.00313201,10.0449324 -2.375,9.67306445 -2.375,9.21434203 L-2.375,9.21434203 C-2.375,8.75561961 -2.00313201,8.38375162 -1.54440959,8.38375162 Z"
+                                                                        id="Rectangle" transform="translate(9.657321, 9.214342) rotate(-315.000000) translate(-9.657321, -9.214342) "></path>
+                                                                    <path d="M-1.54440959,8.38375162 L20.8590523,8.38375162 C21.3177747,8.38375162 21.6896427,8.75561961 21.6896427,9.21434203 L21.6896427,9.21434203 C21.6896427,9.67306445 21.3177747,10.0449324 20.8590523,10.0449324 L-1.54440959,10.0449324 C-2.00313201,10.0449324 -2.375,9.67306445 -2.375,9.21434203 L-2.375,9.21434203 C-2.375,8.75561961 -2.00313201,8.38375162 -1.54440959,8.38375162 Z"
+                                                                        id="Rectangle" transform="translate(9.657321, 9.214342) rotate(-45.000000) translate(-9.657321, -9.214342) "></path>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="white_list__right__list__item">
+                                        <div>
+                                            <span>192.168.11.13</span>
+                                            <a class="deleteItem" href="#">
+                                                <svg width="6px" height="6px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                                    <desc>Created with Sketch.</desc>
+                                                    <defs></defs>
+                                                    <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <g id="setting" transform="translate(-43.000000, -41.000000)" fill="#4A4A4A">
+                                                            <g id="menu">
+                                                                <g id="Menu" transform="translate(43.000000, 41.000000)">
+                                                                    <path d="M-1.54440959,8.38375162 L20.8590523,8.38375162 C21.3177747,8.38375162 21.6896427,8.75561961 21.6896427,9.21434203 L21.6896427,9.21434203 C21.6896427,9.67306445 21.3177747,10.0449324 20.8590523,10.0449324 L-1.54440959,10.0449324 C-2.00313201,10.0449324 -2.375,9.67306445 -2.375,9.21434203 L-2.375,9.21434203 C-2.375,8.75561961 -2.00313201,8.38375162 -1.54440959,8.38375162 Z"
+                                                                        id="Rectangle" transform="translate(9.657321, 9.214342) rotate(-315.000000) translate(-9.657321, -9.214342) "></path>
+                                                                    <path d="M-1.54440959,8.38375162 L20.8590523,8.38375162 C21.3177747,8.38375162 21.6896427,8.75561961 21.6896427,9.21434203 L21.6896427,9.21434203 C21.6896427,9.67306445 21.3177747,10.0449324 20.8590523,10.0449324 L-1.54440959,10.0449324 C-2.00313201,10.0449324 -2.375,9.67306445 -2.375,9.21434203 L-2.375,9.21434203 C-2.375,8.75561961 -2.00313201,8.38375162 -1.54440959,8.38375162 Z"
+                                                                        id="Rectangle" transform="translate(9.657321, 9.214342) rotate(-45.000000) translate(-9.657321, -9.214342) "></path>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="white_list__right__list__item">
+                                        <div>
+                                            <span>192.168.11.13</span>
+                                            <a class="deleteItem" href="#">
+                                                <svg width="6px" height="6px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                                    <desc>Created with Sketch.</desc>
+                                                    <defs></defs>
+                                                    <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                        <g id="setting" transform="translate(-43.000000, -41.000000)" fill="#4A4A4A">
+                                                            <g id="menu">
+                                                                <g id="Menu" transform="translate(43.000000, 41.000000)">
+                                                                    <path d="M-1.54440959,8.38375162 L20.8590523,8.38375162 C21.3177747,8.38375162 21.6896427,8.75561961 21.6896427,9.21434203 L21.6896427,9.21434203 C21.6896427,9.67306445 21.3177747,10.0449324 20.8590523,10.0449324 L-1.54440959,10.0449324 C-2.00313201,10.0449324 -2.375,9.67306445 -2.375,9.21434203 L-2.375,9.21434203 C-2.375,8.75561961 -2.00313201,8.38375162 -1.54440959,8.38375162 Z"
+                                                                        id="Rectangle" transform="translate(9.657321, 9.214342) rotate(-315.000000) translate(-9.657321, -9.214342) "></path>
+                                                                    <path d="M-1.54440959,8.38375162 L20.8590523,8.38375162 C21.3177747,8.38375162 21.6896427,8.75561961 21.6896427,9.21434203 L21.6896427,9.21434203 C21.6896427,9.67306445 21.3177747,10.0449324 20.8590523,10.0449324 L-1.54440959,10.0449324 C-2.00313201,10.0449324 -2.375,9.67306445 -2.375,9.21434203 L-2.375,9.21434203 C-2.375,8.75561961 -2.00313201,8.38375162 -1.54440959,8.38375162 Z"
+                                                                        id="Rectangle" transform="translate(9.657321, 9.214342) rotate(-45.000000) translate(-9.657321, -9.214342) "></path>
+                                                                </g>
+                                                            </g>
+                                                        </g>
+                                                    </g>
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="security__content__item security__content__item_login_history login_history">
+                        <h4 class="">Login history</h4>
+                        <table class="main__table login_history__table">
+                            <tbody>
+                                <tr class="main__table__head_row">
+                                    <th>
+                                        <a href="#" class="">
+                                            <span>OS/Browser</span>
+
+                                        </a>
+
+                                    </th>
+                                    <th>
+                                        <a href="#" class="">
+                                            <span>Login time & date</span>
+                                        </a>
+
+                                    </th>
+                                    <th>
+                                        <a href="#" class="">
+                                            <span>IP address</span>
+                                        </a>
+
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <td>Windows 7, Chrome 60</td>
+                                    <td>———————————</td>
+                                    <td>193.123.12.21.3</td>
+                                </tr>
+                                <tr>
+                                    <td>Windows 7, Chrome 60</td>
+                                    <td>———————————</td>
+                                    <td>193.123.12.21.3</td>
+                                </tr>
+                                <tr>
+                                    <td>Windows 7, Chrome 60</td>
+                                    <td>———————————</td>
+                                    <td>193.123.12.21.3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </section>
+                <a href="" class="security__save btn btn_big btn_big_gradient">Save changes</a>
+
+            </section>
+            <section class="main__section__item main__settings__content__item main__settings__content__item_notification notification">
+                <section class=" main__settings__content__item__wrap__item notification__content">
+                    <h3>Notification</h3>
+                    <section class="notification__content__item">
+                        <h5>Email</h5>
+                        <ul class="notification__content__item__list">
+                            <li class="notification__content__item__list__item">
+                                <div class="haveCheckbox">
+                                    <div>
+                                        <div class="fakeCheckbox fakeCheckbox_big"></div>
+                                        <input type="checkbox" class="hiddenCheckbox" name="" id="">
+                                    </div>
+                                    <span>
+                                        Sending email when payment had been received
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="notification__content__item__list__item">
+                                <div class="haveCheckbox">
+                                    <div>
+                                        <div class="fakeCheckbox fakeCheckbox_big"></div>
+                                        <input type="checkbox" class="hiddenCheckbox" name="" id="">
+                                    </div>
+                                    <span>
+                                        Sending email after withdraws
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="notification__content__item__list__item">
+                                <div class="haveCheckbox">
+                                    <div>
+                                        <div class="fakeCheckbox fakeCheckbox_big"></div>
+                                        <input type="checkbox" class="hiddenCheckbox" name="" id="">
+                                    </div>
+                                    <span>
+                                        Sending email with news about system
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="notification__content__item__list__item">
+                                <div class="haveCheckbox">
+                                    <div>
+                                        <div class="fakeCheckbox fakeCheckbox_big"></div>
+                                        <input type="checkbox" class="hiddenCheckbox" name="" id="">
+                                    </div>
+                                    <span>
+                                        Sending email when system settings were changed
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </section>
+                    <section class="notification__content__item">
+                        <h5>SMS</h5>
+                        <ul class="notification__content__item__list">
+                            <li class="notification__content__item__list__item">
+                                <div class="haveCheckbox">
+                                    <div>
+                                        <div class="fakeCheckbox fakeCheckbox_big"></div>
+                                        <input type="checkbox" class="hiddenCheckbox" name="" id="">
+                                    </div>
+                                    <span>
+                                        Sending email when payment had been received
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="notification__content__item__list__item">
+                                <div class="haveCheckbox">
+                                    <div>
+                                        <div class="fakeCheckbox fakeCheckbox_big"></div>
+                                        <input type="checkbox" class="hiddenCheckbox" name="" id="">
+                                    </div>
+                                    <span>
+                                        Sending email after withdraws
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="notification__content__item__list__item">
+                                <div class="haveCheckbox">
+                                    <div>
+                                        <div class="fakeCheckbox fakeCheckbox_big"></div>
+                                        <input type="checkbox" class="hiddenCheckbox" name="" id="">
+                                    </div>
+                                    <span>
+                                        Sending email with news about system
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="notification__content__item__list__item">
+                                <div class="haveCheckbox">
+                                    <div>
+                                        <div class="fakeCheckbox fakeCheckbox_big"></div>
+                                        <input type="checkbox" class="hiddenCheckbox" name="" id="">
+                                    </div>
+                                    <span>
+                                        Sending email when system settings were changed
+                                    </span>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
+                <a href="" class="notification__save btn btn_big btn_big_gradient">Save changes</a>
+            </section>
+        </section>
+    </main>
+</div>
+@@include('modules/html-footer.html')
