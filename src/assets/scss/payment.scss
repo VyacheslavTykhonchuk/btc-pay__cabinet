@@ -1,0 +1,11 @@
+.main__payment__table {
+    .main__table__head_row__sort {
+        div {
+            svg {
+                &:first-child {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+}

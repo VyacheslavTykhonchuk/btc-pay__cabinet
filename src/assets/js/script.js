@@ -9,9 +9,10 @@
         modalWindow: $('.modal'),
 
         init: function () {
-            btcPay.headerInit();
+            btcPay.initHeader();
+            btcPay.initTableDropdown();
         },
-        headerInit: function name(params) {
+        initHeader: function name(params) {
             let main = $('main'),
                 mainHeader = $('#mainHeader'),
                 openAside = $('#openHeaderAside'),
@@ -27,6 +28,18 @@
                 main.removeClass('aside_visible');
             });
         },
+        initTableDropdown: function () {
+            if (!$('.openSortDropdown').length) return false;
+            console.log($(this));
+
+            let openDropdown = $('.openSortDropdown');
+            openDropdown.each(function () {
+                $(this).on('click', function () {
+                    $(this).parent('th').toggleClass('drop_opened');
+                });
+            });
+        },
+
     });
 
     btcPay.init();

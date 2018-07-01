@@ -1,0 +1,520 @@
+@@include('modules/html-head.html',{ "bodyClass": "stores Payment_body", "pageTitle": "Payment history" }) @@include('modules/header.html',{
+"headerClass": "" })
+<div class="wrap">
+    <main class="main__payment">
+        <section class="main__payment__content">
+            <table class="main__table main__payment__table">
+                <tr class="main__table__head_row">
+                    <th>
+                        <a href="#" class="main__table__head_row__sort openSortDropdown" id="sortStore">
+                            <span>Store</span>
+                            <div>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="sort_dropdown">
+                            <ul class="sort_dropdown__list">
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Store 1</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Store 2</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Store 3</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <a href="#" class="main__table__head_row__sort openSortDropdown" id="sortCurrency">
+                            <span>Currency</span>
+                            <div>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="sort_dropdown">
+                            <ul class="sort_dropdown__list">
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">BTC</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">ETH</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">BCH</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">BTG</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">ZEC</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">DASH</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">ETC</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">XMR</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <a href="#" class="main__table__head_row__sort openSortDropdown" id="sortSum">
+                            <span>Sum</span>
+                            <div>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="sort_dropdown">
+                            <ul class="sort_dropdown__list">
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <a href="#" class="main__table__head_row__sort openSortDropdown" id="sortUSD">
+                            <span>USD</span>
+                            <div>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="sort_dropdown">
+                            <ul class="sort_dropdown__list">
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">USD</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">USD/EUR</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <a href="#" class="main__table__head_row__sort openSortDropdown" id="sortRate">
+                            <span>Exch.rate</span>
+                            <div>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="sort_dropdown">
+                            <ul class="sort_dropdown__list">
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a href="#">Item</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <a href="#" class="main__table__head_row__sort openSortDropdown" id="sortDate">
+                            <span>Date</span>
+                            <div>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="sort_dropdown">
+                            <form class="sort_dropdown__date">
+                                <div class="sort_dropdown__date__input_wrap">
+                                    <input type="text" value="20.09.2017" id="startDate">
+                                    <p>-</p>
+                                    <input type="text" value="20.09.2017" id="endDate">
+                                </div>
+                                <input class="sort_dropdown__date__submit" type="submit" value="Confirm">
+                            </form>
+                        </div>
+                    </th>
+                    <th>
+                        <a href="#" class="main__table__head_row__sort openSortDropdown" id="sortStatus">
+                            <span>Status</span>
+                            <div>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                                <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+                                        <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                            <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) " id="ic_back">
+                                                <g>
+                                                    <g id="back" transform="translate(8.000000, 4.000000)">
+                                                        <path d="M8,0 L0,8" id="Line"></path>
+                                                        <path d="M0,8 L8,16" id="Line"></path>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </a>
+                        <div class="sort_dropdown">
+                            <ul class="sort_dropdown__list">
+                                <li class="sort_dropdown__list__item">
+                                    <a class="sort_dropdown__list__item__status sort_dropdown__list__item__status_success" href="#">Success</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a class="sort_dropdown__list__item__status sort_dropdown__list__item__status_error" href="#">Error</a>
+                                </li>
+                                <li class="sort_dropdown__list__item">
+                                    <a class="sort_dropdown__list__item__status sort_dropdown__list__item__status_timeout" href="#">Timeout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                </tr>
+                <tr>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                    <td>text</td>
+                </tr>
+            </table>
+            <footer class="main__withdraw__content__footer">
+                <span class="main__withdraw__content__footer__total">Total:</span>
+                <span class="main__withdraw__content__footer__currency">USD - 29 990</span>
+                <span class="main__withdraw__content__footer__currency">EUR - 31 000</span>
+            </footer>
+        </section>
+    </main>
+</div>
+@@include('modules/html-footer.html')
