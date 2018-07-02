@@ -36,6 +36,10 @@ main {
         display: grid;
         grid-gap: 30px;
 
+        &__grid {
+            grid-template-columns: 1.1fr 1.5fr 0.65fr;
+        }
+
         &__item {
             padding: 25px;
             background: white;
@@ -82,7 +86,7 @@ main {
                 display: flex;
             }
 
-            h3 {
+            h3,h5 {
                 margin: 0;
                 font-weight: 600;
                 font-size: 20px;
@@ -340,6 +344,7 @@ main {
     font-weight: 500;
     -webkit-appearance: none;
     border: none;
+
     &_small {
         width: 120px;
         height: 32px;
@@ -397,5 +402,74 @@ main {
 
     input.hiddenCheckbox {
         display: none;
+    }
+}
+
+.bullet {
+    display: flex;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        left: -40px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    &_blue {
+        $color: #0090FF;
+
+        &::before {
+            border-color: $color;
+            background-color: $color;
+        }
+    }
+
+    &_pink {
+        $color: #DB00F2;
+
+        &::before {
+            border-color: $color;
+            background-color: $color;
+        }
+    }
+
+    &_orange {
+        $color: #F9B44A;
+
+        &::before {
+            border-color: $color;
+            background-color: $color;
+        }
+    }
+}
+
+.circle {
+    display: flex;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        left: -40px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+
+    &_green {
+        $color: #6FEF00;
+
+        &::before {
+            border-color: $color;
+        }
     }
 }

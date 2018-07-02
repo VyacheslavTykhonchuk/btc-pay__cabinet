@@ -1,1 +1,111 @@
+.balances__main {
+    &__section {
+        &__grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
 
+        &__item {}
+    }
+}
+
+.dynamic_layout {
+    &__item {
+        max-height: 300px;
+        padding: 30px;
+        overflow: hidden;
+
+        &.withdraw_opened {
+            // min-height: 410px;
+            max-height: initial;
+
+            .balance__form {
+                max-height: 1000px;
+            }
+        }
+
+        &.alignment {
+            margin-top: -115px;
+        }
+
+        span {
+            font-weight: $book;
+            color: $darkGray;
+            font-size: 16px;
+            line-height: 21px;
+        }
+
+        p {
+            margin: 0;
+            font-weight: $demi;
+            color: $darkGray;
+            font-size: 30px;
+            line-height: 38px;
+            margin-top: 5px;
+        }
+
+        &__header {
+            h5 {
+                &.bullet {
+                    padding-left: 20px;
+
+                    &::before {
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+
+            &__item {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+.balance__form {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+
+    > * + * {
+        margin-top: 30px;
+    }
+
+    &__item {
+        h6 {
+            color: $lightGray;
+            font-weight: $book;
+            font-size: 16px;
+            margin: 0;
+
+            & + * {
+                margin-top: 16px;
+            }
+        }
+    }
+
+    &__inputs {
+        display: flex;
+        justify-content: space-between;
+
+        input {
+            width: calc((100% / 2) - 22.5px);
+        }
+    }
+
+    input {
+        font-size: 16px;
+        font-weight: $book;
+    }
+
+    &__submit {
+        margin-top: 50px;
+        align-self: center;
+    }
+}

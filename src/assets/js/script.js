@@ -13,6 +13,7 @@
             btcPay.initTableDropdown();
             btcPay.initCheckbox();
             btcPay.initSupportInfo();
+            btcPay.initBalances();
         },
         initHeader: function name(params) {
             let main = $('main'),
@@ -81,8 +82,23 @@
             });
             hideInfo.each(function (e) {
                 $(this).on('click', function (e) {
-                    e.stopPropagation();
                     $(this).closest(showInfo).removeClass('showInfo__visible');
+                    e.stopPropagation();
+                });
+            });
+        },
+        initBalances: function () {
+            if (!$('.balanceItem').length) return false;
+            let balanceItem = $('.balanceItem'),
+                openWithdraw = $('.openWithdraw');
+
+            openWithdraw.each(function (e) {
+                $(this).on('click', function (e) {
+                    if ($(this).closest(balanceItem).hasClass('withdraw_opened')) return false;
+
+                    $(this).closest(balanceItem).addClass('withdraw_opened');
+
+                    e.stopPropagation();
                 });
             });
         },
