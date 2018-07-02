@@ -43,6 +43,7 @@
 
     &__content {
         padding: 55px 0 45px 0;
+        max-width: 94%;
 
         p {
             margin: 0;
@@ -84,6 +85,18 @@
                 opacity: 0;
                 transform: scale(0);
             }
+        }
+    }
+}
+
+.write_to_us {
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        input {
+            line-height: 24px;
+            font-size: 20px;
         }
     }
 }
