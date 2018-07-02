@@ -1,3 +1,9 @@
+// Variables
+$darkGray: hsl(0, 0%, 29%);
+$demi: 600;
+$book: normal;
+
+// Mixins
 @mixin linkHover {
     transition: all 0.4s;
 

@@ -12,6 +12,7 @@
             btcPay.initHeader();
             btcPay.initTableDropdown();
             btcPay.initCheckbox();
+            btcPay.initSupportInfo();
         },
         initHeader: function name(params) {
             let main = $('main'),
@@ -68,6 +69,22 @@
                 }
             });
 
+        },
+        initSupportInfo: function () {
+            if (!$('.showInfo').length) return false;
+            let showInfo = $('.showInfo'),
+                hideInfo = $('.hideInfo');
+            showInfo.each(function () {
+                $(this).on('click', function () {
+                    $(this).addClass('showInfo__visible');
+                });
+            });
+            hideInfo.each(function (e) {
+                $(this).on('click', function (e) {
+                    e.stopPropagation();
+                    $(this).closest(showInfo).removeClass('showInfo__visible');
+                });
+            });
         },
     });
 

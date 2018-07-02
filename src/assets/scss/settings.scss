@@ -43,8 +43,6 @@
                                 padding-bottom: 7px;
                                 font-weight: normal;
                             }
-
-                            .error_msg {}
                         }
                     }
                 }
@@ -72,6 +70,10 @@
 
     &__text {
         color: #FF0000;
+
+        * {
+            color: #FF0000;
+        }
     }
 }
 
@@ -273,6 +275,7 @@
     .main__settings__content__item {
         position: relative;
         padding-bottom: 150px;
+
         .account__setting, .security__save, .notification__save {
             position: absolute;
             bottom: 50px;
