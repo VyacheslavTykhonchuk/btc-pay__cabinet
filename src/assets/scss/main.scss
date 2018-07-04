@@ -3,6 +3,10 @@ body {
     background: #F6F7FB;
 }
 
+.new_store * {
+    box-sizing: border-box;
+}
+
 a {
     text-decoration: none;
     cursor: pointer;
@@ -86,11 +90,32 @@ main {
                 display: flex;
             }
 
-            h3,h5 {
+            h3, h5 {
                 margin: 0;
                 font-weight: 600;
                 font-size: 20px;
                 color: #4A4A4A;
+            }
+
+            &__form {
+                margin-top: 32px;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                padding-bottom: 105px;
+
+                .btn {
+                    margin-top: 50px;
+                    align-self: center;
+                    position: absolute;
+                    bottom: 0;
+                }
+
+                h4 {
+                    font-weight: $medium;
+                    font-size: 18px;
+                    color: $darkGray;
+                }
             }
         }
     }
@@ -373,6 +398,16 @@ main {
     position: relative;
     display: flex;
 
+    &.radioActive {
+        span {
+            color: $darkGray !important;
+        }
+    }
+
+    span {
+        transition: all 0.4s;
+    }
+
     .fakeCheckbox {
         cursor: pointer;
         transition: all 0.3s;
@@ -470,6 +505,163 @@ main {
 
         &::before {
             border-color: $color;
+        }
+    }
+}
+
+.upload_photo_wrap {
+    #uploadPhoto {
+        width: 100%;
+        height: 125px;
+        border-radius: 10px;
+        background-color: #F3F3F3;
+        cursor: pointer;
+        transition: all 0.4s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.04);
+
+            span {
+                color: $mainBlue;
+            }
+        }
+
+        &:active {
+            transition: all 0s;
+            box-shadow: none;
+        }
+
+        span {
+            margin-top: 12px;
+            color: $lightestGray;
+            font-size: 18px;
+            transition: all 0.4s;
+            font-weight: $medium;
+        }
+
+        input {
+            display: none;
+        }
+    }
+
+    & + * {
+        margin-top: 60px;
+    }
+}
+
+.main__input {
+    border: none;
+    border-bottom: 1px solid hsl(0, 0%, 0%);
+    color: $darkGray;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    padding-bottom: 7px;
+    font-weight: $book;
+
+    & + .main__input {
+        margin-top: 60px;
+    }
+}
+
+.custom_list {
+    &__wrap {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+
+        &_name {
+            padding-left: 35px;
+        }
+
+        &_checkboxes {
+            display: flex;
+            align-items: center;
+            margin-left: 45px;
+            align-self: flex-end;
+
+            .haveCheckbox {
+                margin: 0;
+
+                .fakeCheckbox {
+                    top: 3px;
+                    border: 1px solid #9B9B9B;
+
+                    &.checked {
+                        background: #4A4A4A !important;
+                        border-color: #4A4A4A;
+                    }
+                }
+
+                span {
+                    font-weight: $demi;
+                    font-size: 14px;
+                    color: $lightGray;
+                }
+
+                & + * {
+                    margin-left: 30px;
+                }
+            }
+        }
+
+        &_btn {
+            font-weight: $medium;
+            font-size: 12px;
+            color: $darkGray;
+            width: 120px;
+            height: 32px;
+            border: 1px solid $darkGray;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            margin-left: 40px;
+            margin-bottom: -27px;
+        }
+    }
+
+    &__item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 8px;
+        padding: 15px;
+
+        &:nth-child(odd) {
+            background: #FAFAFA;
+        }
+    }
+
+    &__name {
+        span {
+            font-size: 16px;
+            font-weight: $medium;
+            color: $darkGray;
+
+            &.bullet {
+                &::before {
+                    left: -21px;
+                }
+            }
+        }
+    }
+
+    &__desc {
+        margin-top: 6px;
+        white-space: nowrap;
+
+        span {
+            font-size: 16px;
+            font-weight: $medium;
+            color: $lightGray;
         }
     }
 }

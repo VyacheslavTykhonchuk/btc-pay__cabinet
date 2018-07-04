@@ -1,8 +1,12 @@
 // Variables
 $darkGray: hsl(0, 0%, 29%);
 $lightGray: hsl(0, 0%, 61%);
+$mainBlue: #00D1FF;
+$lightestGray: #C0C0C0;
+
 $demi: 600;
 $book: normal;
+$medium: 500;
 
 // Mixins
 @mixin linkHover {

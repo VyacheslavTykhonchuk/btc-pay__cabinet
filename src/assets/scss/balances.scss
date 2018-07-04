@@ -19,7 +19,10 @@
             max-height: initial;
 
             .balance__form {
-                max-height: 1000px;
+                &__item{
+                    max-height: 1000px;
+
+                }
             }
         }
 
@@ -70,14 +73,14 @@
     margin-top: 25px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    max-height: 0;
 
     > * + * {
         margin-top: 30px;
     }
 
     &__item {
+    max-height: 0;
+        overflow: hidden;
         h6 {
             color: $lightGray;
             font-weight: $book;
