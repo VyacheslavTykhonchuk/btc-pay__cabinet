@@ -1,0 +1,39 @@
+.new_store {
+    .main__section__new_store {
+        grid-template-columns: 1.1fr 1.5fr 0.65fr;
+        grid-template-rows: 270px 450px;
+    }
+
+    .section__payment {
+        .wrap__input_with_heading {
+            margin-top: 30px;
+        }
+    }
+
+    .support__item {
+        padding: 25px !important;
+
+        .support__item__header {
+            h4 {
+                font-weight: $medium;
+                font-size: 20px;
+                color: $darkGray;
+            }
+        }
+
+        .support__item__content {
+            padding: 0 !important;
+
+            p {
+                font-size: 20px;
+                color: $darkGray;
+                line-height: 23px;
+                font-weight: $book;
+            }
+        }
+
+        > * + * {
+            margin-top: 11px;
+        }
+    }
+}
