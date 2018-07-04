@@ -45,6 +45,7 @@ main {
         }
 
         &__item {
+            position: relative;
             padding: 25px;
             background: white;
             border-radius: 10px;
@@ -663,5 +664,82 @@ main {
             font-weight: $medium;
             color: $lightGray;
         }
+    }
+}
+
+.form {
+    &_typical {
+        display: flex;
+        flex-direction: column;
+
+        input[type="text"] {
+            font-weight: $book;
+            font-size: 10px;
+            color: $darkGray;
+            margin-top: 30px;
+        }
+
+        input[type="reset"] {
+            font-size: 10px;
+            color: $darkGray;
+            font-weight: $medium;
+            border: none;
+            margin-top: 8px;
+        }
+
+        .haveCheckbox {
+            margin: 16px 0 0;
+
+            & + * {
+                margin-top: 30px;
+            }
+
+            span {
+                font-size: 12px;
+                color: $darkGray;
+                font-weight: $medium;
+            }
+
+            .fakeCheckbox {
+                top: 3px;
+            }
+        }
+    }
+}
+
+.bottom_btns {
+    position: absolute;
+    bottom: 45px;
+    display: flex;
+    width: calc(100% - 50px);
+    flex-direction: column;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    justify-content: center;
+    align-items: center;
+
+    .btn {
+        max-width: 100%;
+    }
+
+    &.upper {
+        padding-bottom: 22px;
+    }
+}
+
+.wrap__input_with_heading {
+    margin-top: 35px;
+
+    h5 {
+        font-size: 14px;
+        color: $lightGray;
+        font-weight: $book;
+    }
+
+    input {
+        margin-top: 14px;
+        font-size: 10px;
+        color: $darkGray;
     }
 }

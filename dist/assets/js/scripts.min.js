@@ -54,21 +54,23 @@
             checkbox.each(function () {
 
                 $(this).on('click', function () {
-                    $(this).toggleClass('checked');
 
                     if ($(this).hasClass('fakeRadio')) {
-                        $(this).closest(parent).siblings().find('.fakeCheckbox').removeClass('checked');
                         if ($(this).closest(parent).find(hiddenCheckbox).prop('checked')) {
-                            $(this).closest(parent).find(hiddenCheckbox).prop('checked', false);
-                            $(this).closest(parent).removeClass('radioActive');
+                            return;
                         }
                         else {
+                            $(this).closest(parent).siblings().find('.fakeCheckbox').removeClass('checked');
                             $(this).closest(parent).siblings().find(hiddenCheckbox).prop('checked', false);
                             $(this).closest(parent).siblings().removeClass('radioActive');
                             $(this).closest(parent).addClass('radioActive');
                             $(this).closest(parent).find(hiddenCheckbox).prop('checked', true);
+                            $(this).toggleClass('checked');
+
                         }
                     } else {
+                        $(this).toggleClass('checked');
+
                         if ($(this).closest(parent).find(hiddenCheckbox).prop('checked')) {
                             $(this).closest(parent).find(hiddenCheckbox).prop('checked', false);
                         }
