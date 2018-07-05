@@ -16,6 +16,9 @@
             btcPay.initBalances();
             btcPay.initUploadPhoto();
             btcPay.initCustomSelect();
+            btcPay.initGraphMenu();
+            btcPay.initMainGraph();
+
 
         },
         initHeader: function name(params) {
@@ -205,6 +208,158 @@
                 });
             }
         },
+        initGraphMenu: function () {
+            if (!$('.graphMenu').length) return false;
+            let graphMenu = $('.graphMenu'),
+                openMenu = $('.openGraphMenu'),
+                closeMenu = $('.closeGraphMenu');
+            openMenu.on('click', function () {
+                $(this).closest(graphMenu).addClass('opened');
+            });
+            closeMenu.on('click', function () {
+                $(this).closest(graphMenu).removeClass('opened');
+            });
+        },
+        initMainGraph: function () {
+            if (!$('.mainGraph').length) return false;
+
+            // test arr
+            let labelsArr = ['12/03', '13/03', '14/03', '15/03', '16/03', '17/03', '18/03', '12/03', '13/03', '14/03', '15/03', '16/03', '17/03', '18/03'];
+
+            drawGraph(labelsArr, '7');
+            function drawGraph(labelsArr, range) {
+                while (labelsArr.length > +range) {
+                    labelsArr.pop();
+                }
+                let ctx = $('.mainGraphCanvas');
+                let data = {
+                    labels: labelsArr,
+                    datasets: [
+                        {
+                            label: 'BTC',
+                            data: [2, 1.5, 1.7, 1.8, 1.9, 2, 2.1, 2, 1.5, 1.7, 1.8, 1.9, 2, 2.1, 2, 1.5, 1.7, 1.8, 1.9, 2, 2.1],
+                            borderWidth: 4,
+                            pointBackgroundColor: 'hsl(47, 94%, 68%)',
+                            pointBorderColor: 'hsl(0, 0%, 100%)',
+                            pointBorderWidth: 3,
+                            pointRadius: 10,
+                            pointHoverRadius: 10,
+                            cubicInterpolationMode: 'monotone',
+                            backgroundColor: [
+                                'hsla(55, 94%, 54%,0.17)'
+                            ],
+                            borderColor: [
+                                'hsl(47, 94%, 68%)'
+                            ],
+                        },
+                        {
+                            label: 'EOS',
+                            data: [3, 2, 2.3, 2.6, 2.7, 2.8, 3, 3, 2, 2.3, 2.6, 2.7, 2.8, 3, 3, 2, 2.3, 2.6, 2.7, 2.8, 3],
+                            borderWidth: 4,
+                            pointBackgroundColor: 'hsl(191, 100%, 50%)',
+                            pointBorderColor: 'hsl(0, 0%, 100%)',
+                            pointBorderWidth: 3,
+                            pointRadius: 10,
+                            pointHoverRadius: 10,
+                            cubicInterpolationMode: 'monotone',
+                            backgroundColor: [
+                                'hsla(191, 100%, 50%,.15)'
+                            ],
+                            borderColor: [
+                                'hsl(191, 100%, 50%)'
+                            ],
+                        },
+                        {
+                            label: 'ETH',
+                            data: [1, 0.1, 0.2, 0.5, 0.8, 0.1, 1, 1, 0.1, 0.2, 0.5, 0.8, 0.1, 1, 1, 0.1, 0.2, 0.5, 0.8, 0.1, 1],
+                            borderWidth: 4,
+                            pointBackgroundColor: 'hsl(287, 100%, 48%)',
+                            pointBorderColor: 'hsl(0, 0%, 100%)',
+                            pointBorderWidth: 3,
+                            pointRadius: 10,
+                            pointHoverRadius: 10,
+                            cubicInterpolationMode: 'monotone',
+                            backgroundColor: [
+                                'hsla(287, 100%, 48%,0.15)'
+                            ],
+                            borderColor: [
+                                'hsl(287, 100%, 48%)'
+                            ],
+
+                        },
+
+                    ]
+
+                };
+                let options = {
+                    maintainAspectRatio: false,
+                    legend: {
+                        display: false,
+                    },
+
+                    layout: {
+                        padding: {
+                            left: 0,
+                            right: 0,
+                            top: 32,
+                            bottom: 0
+                        }
+                    },
+                    scales: {
+
+                        xAxes: [{
+                            gridLines: {
+                                color: "rgba(0, 0, 0, 0)",
+                                drawBorder: false,
+                                display: false,
+
+                            },
+                            ticks: {
+                                fontFamily: "CoreSansG",
+                                fontSize: 12,
+                                fontColor: 'hsla(0, 0%, 11%,0.5)',
+                                // callback: function (value, index, values) {
+                                //     if (index == 0) {
+                                //         return null;
+                                //     } else {
+                                //         return index;
+                                //     }
+                                // }
+                            },
+
+                        }],
+                        yAxes: [{
+                            gridLines: {
+                                drawBorder: false,
+
+                            },
+                            pointLabels: false,
+                            ticks: {
+                                min: 0,
+                                max: 3.2,
+                                stepSize: 1,
+                                beginAtZero: true,
+                                callback: function (value, index, values) {
+                                    if (index == 0) {
+                                        return null;
+                                    } else {
+                                        return '';
+                                    }
+                                }
+                            }
+                        }]
+                    }
+                };
+
+                let myLineChart = new Chart(ctx, {
+                    type: 'line',
+                    data: data,
+                    options: options
+
+                });
+            }
+
+        }
     });
     $(document).ready(function () {
         btcPay.init();
