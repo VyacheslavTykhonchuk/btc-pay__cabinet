@@ -11,17 +11,20 @@
 .dynamic_layout {
     &__item {
         max-height: 300px;
-        padding: 30px;
+        padding: 20px 40px 40px 36px;
         overflow: hidden;
 
         &.withdraw_opened {
             // min-height: 410px;
             max-height: initial;
 
-            .balance__form {
-                &__item{
-                    max-height: 1000px;
+            .balance__form__submit {
+                margin-top: 50px;
+            }
 
+            .balance__form {
+                &__item {
+                    max-height: 1000px;
                 }
             }
         }
@@ -79,8 +82,10 @@
     }
 
     &__item {
-    max-height: 0;
+        max-height: 0;
         overflow: hidden;
+        position: relative;
+
         h6 {
             color: $lightGray;
             font-weight: $book;
@@ -108,7 +113,8 @@
     }
 
     &__submit {
-        margin-top: 50px;
+        // margin-top: 50px;
+        margin-top: 0;
         align-self: center;
     }
 }
