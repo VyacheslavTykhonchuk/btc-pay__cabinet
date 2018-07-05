@@ -13,6 +13,9 @@
         max-height: 300px;
         padding: 20px 40px 40px 36px;
         overflow: hidden;
+        width: calc((100% / 3) - 106px);
+        margin: 15px;
+        transition: all 0.4s;
 
         &.withdraw_opened {
             // min-height: 410px;
@@ -113,7 +116,6 @@
     }
 
     &__submit {
-        // margin-top: 50px;
         margin-top: 0;
         align-self: center;
     }

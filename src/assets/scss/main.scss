@@ -371,6 +371,9 @@ main {
     -webkit-appearance: none;
     border: none;
     transition: all .4s;
+    backface-visibility: hidden;
+    outline: none;
+    transform: translate3d(0, 0, 0);
 
     &_small {
         width: 120px;
@@ -383,7 +386,7 @@ main {
             background-image: linear-gradient(-72deg, #00FDD9 0%, #00D2FE 100%);
 
             &:hover {
-                transform: scale(0.98);
+                transform: translate3d(0, 0, 0) scale(0.98);
             }
         }
     }
@@ -397,7 +400,7 @@ main {
             background-image: linear-gradient(-72deg, #00FDD9 0%, #00D2FE 100%);
 
             &:hover {
-                transform: scale(0.98);
+                transform:translate3d(0, 0, 0) scale(0.98);
             }
         }
     }
@@ -819,4 +822,8 @@ main {
     .hideOptions {
         display: none;
     }
+}
+
+.noTransition {
+    transition: all 0s !important;
 }

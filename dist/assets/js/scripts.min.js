@@ -16,6 +16,7 @@
             btcPay.initBalances();
             btcPay.initUploadPhoto();
             btcPay.initCustomSelect();
+
         },
         initHeader: function name(params) {
             let main = $('main'),
@@ -134,13 +135,26 @@
             openWithdraw.each(function (e) {
                 $(this).on('click', function (e) {
                     if ($(this).closest(balanceItem).hasClass('withdraw_opened')) return false;
-
                     e.preventDefault();
+                    $(this).addClass('noTransition');
                     $(this).closest(balanceItem).addClass('withdraw_opened');
-
                     e.stopPropagation();
+                    dynamicLayout();
+                    $(this).removeClass('noTransition');
                 });
             });
+
+            function dynamicLayout() {
+                let grid = document.querySelector('.dynamic_layout');
+                let msnry = new Masonry(grid, {
+                    itemSelector: '.dynamic_layout__item',
+                    columnWidth: '.dynamic_layout__item',
+                    percentPosition: true
+                });
+            }
+            dynamicLayout();
+
+
         },
         initUploadPhoto: function (e) {
             if (!$('#uploadPhoto').length) return false;
@@ -156,6 +170,7 @@
                 selectOption = $('.selectOption'),
                 showOptions = $('.showOptions'),
                 hideOptions = $('.hideOptions');
+
             toggleSelect.each(function () {
                 $(this).on('click', function () {
                     $(this).closest('.custom_select').toggleClass('opened');
@@ -187,7 +202,8 @@
             }
         },
     });
-
-    btcPay.init();
+    $(document).ready(function () {
+        btcPay.init();
+    });
 
 })(jQuery);

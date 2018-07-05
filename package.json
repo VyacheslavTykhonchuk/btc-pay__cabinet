@@ -18,5 +18,8 @@
         "gulp-watch": "latest",
         "gulp-webserver": "latest",
         "ttf2woff2": "latest"
+    },
+    "dependencies": {
+        "masonry-layout": "^4.2.2"
     }
 }
