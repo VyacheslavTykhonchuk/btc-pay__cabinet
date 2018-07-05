@@ -225,12 +225,26 @@
             let initRange = '7';
 
             // test arr
+            const dateArr = [];
             const labelsArr = ['12/03', '13/03', '14/03', '15/03', '16/03', '17/03', '18/03', '12/03', '13/03', '14/03', '15/03', '16/03', '17/03', '18/03'];
 
+            generateLabelsArr();
             drawGraph(labelsArr, initRange);
-
             findRange();
 
+            function generateLabelsArr() {
+                let date = new Date(),
+                    month = date.getMonth(),
+                    year = date.getFullYear(),
+                    daysInMonth,
+                    days;
+
+                daysInMonth = function () {
+                    return new Date(year, month, 0).getDate();
+                };
+                days = daysInMonth();
+                console.log(days);
+            }
             function findRange() {
                 $('.fakeCheckbox').on('click', function () {
                     let newRange = $(this).closest('.haveCheckbox').attr('data-range');
@@ -244,6 +258,7 @@
             function drawGraph(arr, range) {
                 // make arr copy
                 let localArr = Array.from(arr);
+                let bulletRadius = 10;
 
                 // pop arr
                 while (localArr.length > +range) {
@@ -262,7 +277,7 @@
                             pointBackgroundColor: 'hsl(47, 94%, 68%)',
                             pointBorderColor: 'hsl(0, 0%, 100%)',
                             pointBorderWidth: 3,
-                            pointRadius: 10,
+                            pointRadius: bulletRadius,
                             pointHoverRadius: 10,
                             cubicInterpolationMode: 'monotone',
                             backgroundColor: [
@@ -279,7 +294,7 @@
                             pointBackgroundColor: 'hsl(191, 100%, 50%)',
                             pointBorderColor: 'hsl(0, 0%, 100%)',
                             pointBorderWidth: 3,
-                            pointRadius: 10,
+                            pointRadius: bulletRadius,
                             pointHoverRadius: 10,
                             cubicInterpolationMode: 'monotone',
                             backgroundColor: [
@@ -296,7 +311,7 @@
                             pointBackgroundColor: 'hsl(287, 100%, 48%)',
                             pointBorderColor: 'hsl(0, 0%, 100%)',
                             pointBorderWidth: 3,
-                            pointRadius: 10,
+                            pointRadius: bulletRadius,
                             pointHoverRadius: 10,
                             cubicInterpolationMode: 'monotone',
                             backgroundColor: [
