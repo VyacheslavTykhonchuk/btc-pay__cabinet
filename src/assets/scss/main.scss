@@ -421,6 +421,12 @@ main {
         transition: all 0.4s;
     }
 
+    .fakeRadio {
+        &.checked {
+            pointer-events: none;
+        }
+    }
+
     .fakeCheckbox {
         cursor: pointer;
         transition: all 0.3s;

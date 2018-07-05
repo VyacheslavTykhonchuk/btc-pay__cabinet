@@ -222,18 +222,38 @@
         },
         initMainGraph: function () {
             if (!$('.mainGraph').length) return false;
+            let initRange = '7';
 
             // test arr
-            let labelsArr = ['12/03', '13/03', '14/03', '15/03', '16/03', '17/03', '18/03', '12/03', '13/03', '14/03', '15/03', '16/03', '17/03', '18/03'];
+            const labelsArr = ['12/03', '13/03', '14/03', '15/03', '16/03', '17/03', '18/03', '12/03', '13/03', '14/03', '15/03', '16/03', '17/03', '18/03'];
 
-            drawGraph(labelsArr, '7');
-            function drawGraph(labelsArr, range) {
-                while (labelsArr.length > +range) {
-                    labelsArr.pop();
+            drawGraph(labelsArr, initRange);
+
+            findRange();
+
+            function findRange() {
+                $('.fakeCheckbox').on('click', function () {
+                    let newRange = $(this).closest('.haveCheckbox').attr('data-range');
+                    // clear old canvas
+                    $('.mainGraphCanvas').remove();
+                    $('.mainGraph').append('<canvas class="mainGraphCanvas"></canvas>');
+                    // 
+                    drawGraph(labelsArr, newRange);
+                });
+            }
+            function drawGraph(arr, range) {
+                // make arr copy
+                let localArr = Array.from(arr);
+
+                // pop arr
+                while (localArr.length > +range) {
+                    localArr.pop();
                 }
+
+                // graph initialization
                 let ctx = $('.mainGraphCanvas');
                 let data = {
-                    labels: labelsArr,
+                    labels: localArr,
                     datasets: [
                         {
                             label: 'BTC',
