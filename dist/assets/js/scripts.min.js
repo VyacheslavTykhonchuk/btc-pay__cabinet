@@ -133,9 +133,13 @@
                 openWithdraw = $('.openWithdraw');
 
             openWithdraw.each(function (e) {
+                let clicked = false;
                 $(this).on('click', function (e) {
                     if ($(this).closest(balanceItem).hasClass('withdraw_opened')) return false;
-                    e.preventDefault();
+
+                    if (!clicked) e.preventDefault();
+                    clicked = true;
+
                     $(this).addClass('noTransition');
                     $(this).closest(balanceItem).addClass('withdraw_opened');
                     e.stopPropagation();
