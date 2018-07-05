@@ -226,24 +226,33 @@
 
             // test arr
             const dateArr = [];
-            const labelsArr = ['12/03', '13/03', '14/03', '15/03', '16/03', '17/03', '18/03', '12/03', '13/03', '14/03', '15/03', '16/03', '17/03', '18/03'];
 
             generateLabelsArr();
-            drawGraph(labelsArr, initRange);
+            drawGraph(dateArr, initRange);
             findRange();
 
             function generateLabelsArr() {
                 let date = new Date(),
                     month = date.getMonth(),
                     year = date.getFullYear(),
-                    daysInMonth,
+                    daysInCurrentMonth,
                     days;
 
-                daysInMonth = function () {
+                daysInCurrentMonth = function () {
                     return new Date(year, month, 0).getDate();
                 };
-                days = daysInMonth();
-                console.log(days);
+
+                days = daysInCurrentMonth();
+
+                for (let index = 1; index <= days; index++) {
+                    let str = '';
+                    if (month < 10) {
+                        str = index + '/0' + month;
+                    } else {
+                        str = index + '/' + month;
+                    }
+                    dateArr.push(str);
+                }
             }
             function findRange() {
                 $('.fakeCheckbox').on('click', function () {
@@ -252,7 +261,7 @@
                     $('.mainGraphCanvas').remove();
                     $('.mainGraph').append('<canvas class="mainGraphCanvas"></canvas>');
                     // 
-                    drawGraph(labelsArr, newRange);
+                    drawGraph(dateArr, newRange);
                 });
             }
             function drawGraph(arr, range) {
@@ -264,6 +273,12 @@
                 while (localArr.length > +range) {
                     localArr.pop();
                 }
+                // dymanic bullet size
+                if (range == 14) {
+                    bulletRadius = 8;
+                } else if (range > 25) {
+                    bulletRadius = 6;
+                }
 
                 // graph initialization
                 let ctx = $('.mainGraphCanvas');
@@ -272,7 +287,7 @@
                     datasets: [
                         {
                             label: 'BTC',
-                            data: [2, 1.5, 1.7, 1.8, 1.9, 2, 2.1, 2, 1.5, 1.7, 1.8, 1.9, 2, 2.1, 2, 1.5, 1.7, 1.8, 1.9, 2, 2.1],
+                            data: [2, 1.5, 1.7, 1.8, 1.9, 2, 2.1, 2, 1.5, 1.7, 1.8, 1.9, 2, 2.1, 2, 1.5, 1.7, 1.8, 1.9, 2, 2.1, 2, 1.5, 1.7, 1.8, 1.9, 2, 2.1, 2, 1.5, 1.7, 1.8, 1.9, 2, 2.1, 2, 1.5, 1.7, 1.8, 1.9, 2, 2.1],
                             borderWidth: 4,
                             pointBackgroundColor: 'hsl(47, 94%, 68%)',
                             pointBorderColor: 'hsl(0, 0%, 100%)',
@@ -289,7 +304,7 @@
                         },
                         {
                             label: 'EOS',
-                            data: [3, 2, 2.3, 2.6, 2.7, 2.8, 3, 3, 2, 2.3, 2.6, 2.7, 2.8, 3, 3, 2, 2.3, 2.6, 2.7, 2.8, 3],
+                            data: [3, 2, 2.3, 2.6, 2.7, 2.8, 3, 3, 2, 2.3, 2.6, 2.7, 2.8, 3, 3, 2, 2.3, 2.6, 2.7, 2.8, 3, 2, 2.3, 2.6, 2.7, 2.8, 3, 3, 2, 2.3, 2.6, 2.7, 2.8, 3, 3, 2, 2.3, 2.6, 2.7, 2.8, 3],
                             borderWidth: 4,
                             pointBackgroundColor: 'hsl(191, 100%, 50%)',
                             pointBorderColor: 'hsl(0, 0%, 100%)',
@@ -306,7 +321,7 @@
                         },
                         {
                             label: 'ETH',
-                            data: [1, 0.1, 0.2, 0.5, 0.8, 0.1, 1, 1, 0.1, 0.2, 0.5, 0.8, 0.1, 1, 1, 0.1, 0.2, 0.5, 0.8, 0.1, 1],
+                            data: [1, 0.1, 0.2, 0.5, 0.8, 0.1, 1, 1, 0.1, 0.2, 0.5, 0.8, 0.1, 1, 1, 0.1, 0.2, 0.5, 0.8, 0.1, 1, 0.1, 0.2, 0.5, 0.8, 0.1, 1, 1, 0.1, 0.2, 0.5, 0.8, 0.1, 1, 1, 0.1, 0.2, 0.5, 0.8, 0.1, 1],
                             borderWidth: 4,
                             pointBackgroundColor: 'hsl(287, 100%, 48%)',
                             pointBorderColor: 'hsl(0, 0%, 100%)',
