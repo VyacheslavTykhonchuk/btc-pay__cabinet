@@ -841,3 +841,17 @@ main {
 .noTransition {
     transition: all 0s !important;
 }
+
+.inactive {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.transparent {
+    opacity: 0.5;
+}

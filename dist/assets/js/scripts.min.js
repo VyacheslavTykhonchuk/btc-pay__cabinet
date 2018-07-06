@@ -121,11 +121,13 @@
             showInfo.each(function () {
                 $(this).on('click', function () {
                     $(this).addClass('showInfo__visible');
+                    $(this).removeClass('transparent');
                 });
             });
             hideInfo.each(function (e) {
                 $(this).on('click', function (e) {
                     $(this).closest(showInfo).removeClass('showInfo__visible');
+                    $(this).closest(showInfo).addClass('transparent');
                     e.stopPropagation();
                 });
             });
@@ -135,22 +137,43 @@
             let balanceItem = $('.balanceItem'),
                 openWithdraw = $('.openWithdraw');
 
-            openWithdraw.each(function (e) {
-                let clicked = false;
-                $(this).on('click', function (e) {
-                    if ($(this).closest(balanceItem).hasClass('withdraw_opened')) return false;
+            dynamicLayout();
+            initOpenWithdraw();
+            initScrollReveal();
 
-                    if (!clicked) e.preventDefault();
-                    clicked = true;
+            function initScrollReveal() {
+                let el = $('.balanceItem.transparent');
 
-                    $(this).addClass('noTransition');
-                    $(this).closest(balanceItem).addClass('withdraw_opened');
-                    e.stopPropagation();
-                    dynamicLayout();
-                    $(this).removeClass('noTransition');
+                el.each(function () {
+                    let elCenter = 0,
+                        elOffset = $(this).offset().top,
+                        $this = $(this);
+
+                    $(window).on('scroll', function () {
+                        let scroll = ($(window).scrollTop() + $(window).innerHeight() - 250);
+
+                        if ((elOffset - elCenter) < scroll) {
+                            $this.removeClass('transparent');
+                        }
+                    });
                 });
-            });
+            }
+            function initOpenWithdraw() {
+                openWithdraw.each(function (e) {
+                    $(this).on('click', function (e) {
+                        if (!$(this).closest(balanceItem).hasClass('withdraw_opened')) e.preventDefault();
 
+                        $(this).addClass('noTransition');
+                        $(this).closest(balanceItem).addClass('withdraw_opened');
+                        e.stopPropagation();
+
+                        // call re-shuffle
+                        dynamicLayout();
+
+                        $(this).removeClass('noTransition');
+                    });
+                });
+            }
             function dynamicLayout() {
                 let grid = document.querySelector('.dynamic_layout');
                 let msnry = new Masonry(grid, {
@@ -159,9 +182,6 @@
                     percentPosition: true
                 });
             }
-            dynamicLayout();
-
-
         },
         initUploadPhoto: function (e) {
             if (!$('#uploadPhoto').length) return false;
