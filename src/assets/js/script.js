@@ -179,7 +179,8 @@
                 let msnry = new Masonry(grid, {
                     itemSelector: '.dynamic_layout__item',
                     columnWidth: '.dynamic_layout__item',
-                    percentPosition: true
+                    percentPosition: true,
+                    horizontalOrder: true
                 });
             }
         },
