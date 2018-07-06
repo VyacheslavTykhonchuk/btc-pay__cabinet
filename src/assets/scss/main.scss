@@ -526,6 +526,14 @@ main {
             border-color: $color;
         }
     }
+
+    &_blue {
+        $color: #0200F6;
+
+        &::before {
+            border-color: $color;
+        }
+    }
 }
 
 .upload_photo_wrap {

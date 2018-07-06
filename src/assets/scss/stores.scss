@@ -1,6 +1,26 @@
 .main__stores {
     padding-bottom: 40px;
 
+    &__total {
+        margin-top: 45px;
+        display: flex;
+        flex-direction: column;
+
+        span {
+            font-weight: $demi;
+            font-size: 22px;
+            color: $darkGray;
+        }
+
+        h3 + * {
+            margin-top: 30px;
+        }
+
+        span + span {
+            margin-top: 20px;
+        }
+    }
+
     &__exchange_rates {
         display: flex;
         flex-direction: column;
