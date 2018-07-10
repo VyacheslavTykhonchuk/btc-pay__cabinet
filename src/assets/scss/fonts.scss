@@ -1,70 +1,42 @@
-// @font-face {
-//     font-family: 'FuturaPT';
-//     src: url("/dist/assets/fonts/FuturaPTBook.otf");
-//     font-weight: normal;
-// }
-
-// @font-face {
-//     font-family: 'FuturaPT';
-//     src: url("/dist/assets/fonts/FuturaPTBold.otf");
-//     font-weight: 700;
-// }
-
-// @font-face {
-//     font-family: 'FuturaPT';
-//     src: url("/dist/assets/fonts/FuturaPTLight.otf");
-//     font-weight: 300;
-// }
-
-// @font-face {
-//     font-family: 'FuturaPT';
-//     src: url("/dist/assets/fonts/FuturaPTMedium.otf");
-//     font-weight: 500;
-// }
-
-// @font-face {
-//     font-family: 'FuturaPT';
-//     src: url("/dist/assets/fonts/FuturaPTDemi.otf");
-//     font-weight: 600;
-// }
 @font-face {
     font-family: 'FuturaPT';
-    src: url("/dist/assets/fonts/FuturaPTBook.otf");
+    src: url("../fonts/FuturaPTBook.otf");
     font-weight: normal;
 }
 
 @font-face {
     font-family: 'FuturaPT';
-    src: url("/dist/assets/fonts/FuturaPTBold.otf");
+    src: url("../fonts/FuturaPTBold.otf");
     font-weight: 700;
 }
 
 @font-face {
     font-family: 'FuturaPT';
-    src: url("/dist/assets/fonts/FuturaPTLight.otf");
+    src: url("../fonts/FuturaPTLight.otf");
     font-weight: 300;
 }
 
 @font-face {
     font-family: 'FuturaPT';
-    src: url("/dist/assets/fonts/FuturaPTMedium.otf");
+    src: url("../fonts/FuturaPTMedium.otf");
     font-weight: 500;
 }
 
 @font-face {
     font-family: 'FuturaPT';
-    src: url("/dist/assets/fonts/FuturaPTDemi.otf");
+    src: url("../fonts/FuturaPTDemi.otf");
     font-weight: 600;
 }
+
 //
 @font-face {
     font-family: 'CoreSansG';
-    src: url("/dist/assets/fonts/CoreSansG-Medium.ttf");
+    src: url("../fonts/CoreSansG-Medium.ttf");
     font-weight: normal;
 }
 
 @font-face {
     font-family: 'CoreSansG';
-    src: url("/dist/assets/fonts/CoreSansG-Bold.ttf");
+    src: url("../fonts/CoreSansG-Bold.ttf");
     font-weight: 700;
 }
