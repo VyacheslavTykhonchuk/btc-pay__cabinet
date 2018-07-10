@@ -7,4 +7,4 @@ To start (in terminal):
 
 ## For Back-end:
 
-**Stores.html in outdated use Stores Full History instead**
+**stores.html is __outdated__ use stores-full-history.html instead**
