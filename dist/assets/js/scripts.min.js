@@ -18,7 +18,7 @@
             btcPay.initCustomSelect();
             btcPay.initGraphMenu();
             btcPay.initMainGraph();
-
+            btcPay.initImagePreview();
 
         },
         initHeader: function name(params) {
@@ -241,6 +241,22 @@
                 $(this).closest(graphMenu).removeClass('opened');
             });
         },
+        initImagePreview() {
+
+            $("#upload").change(function () {
+                readURL(this);
+            });
+
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        $('#uploadedImage').attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        },
         initMainGraph: function () {
             if (!$('.mainGraph').length) return false;
             let initRange = '7';
@@ -285,6 +301,7 @@
                     drawGraph(dateArr, newRange);
                 });
             }
+
             function drawGraph(arr, range) {
                 // make arr copy
                 let localArr = Array.from(arr);
