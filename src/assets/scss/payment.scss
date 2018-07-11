@@ -2,7 +2,7 @@
     .main__table__head_row__sort {
         div {
             svg {
-                &:first-child {
+                &.revert {
                     transform: rotate(180deg);
                 }
             }

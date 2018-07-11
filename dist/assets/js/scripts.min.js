@@ -40,7 +40,6 @@
         },
         initTableDropdown: function () {
             if (!$('.openSortDropdown').length) return false;
-            console.log($(this));
 
             let openDropdown = $('.openSortDropdown');
             openDropdown.each(function () {
@@ -269,7 +268,7 @@
             wrap.each(function () {
                 let abs = $(this).find('input[name="absolute"]'),
                     per = $(this).find('input[name="percents"]');
-                console.log(abs);
+
                 abs.on('change', function () {
                     let checked = this.checked;
                     if (checked) {
