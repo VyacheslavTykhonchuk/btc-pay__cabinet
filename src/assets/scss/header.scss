@@ -88,7 +88,8 @@
     &__right {
         &__search {
             display: flex;
-
+            // 
+            display: none;
             * + * {
                 margin-left: 33px;
             }
