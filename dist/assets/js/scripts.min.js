@@ -19,6 +19,7 @@
             btcPay.initGraphMenu();
             btcPay.initMainGraph();
             btcPay.initImagePreview();
+            btcPay.initComission();
 
         },
         initHeader: function name(params) {
@@ -83,6 +84,7 @@
                             $(this).closest(parent).find(hiddenCheckbox).prop('checked', true);
                         }
                     }
+                    $(this).closest(parent).find(hiddenCheckbox).change();
                 });
 
 
@@ -242,9 +244,12 @@
             });
         },
         initImagePreview() {
+            if (!$('#upload').length) return false;
 
             $("#upload").change(function () {
                 readURL(this);
+                $('#uploadPhoto').find('svg').hide();
+                $('#uploadPhoto').find('span').hide();
             });
 
             function readURL(input) {
@@ -256,6 +261,28 @@
                     reader.readAsDataURL(input.files[0]);
                 }
             }
+        },
+        initComission() {
+            if (!$('.comissionHolder').length) return false;
+            let wrap = $('.comissionHolder');
+
+            wrap.each(function () {
+                let abs = $(this).find('input[name="absolute"]'),
+                    per = $(this).find('input[name="percents"]');
+                console.log(abs);
+                abs.on('change', function () {
+                    let checked = this.checked;
+                    if (checked) {
+                        $(this).closest('.comissionHolder').find('.comissionPercent').hide();
+                    }
+                });
+                per.on('change', function () {
+                    let checked = this.checked;
+                    if (checked) {
+                        $(this).closest('.comissionHolder').find('.comissionPercent').show();
+                    }
+                });
+            });
         },
         initMainGraph: function () {
             if (!$('.mainGraph').length) return false;

@@ -652,6 +652,21 @@ main {
             border-radius: 5px;
             margin-left: 40px;
             margin-bottom: -27px;
+
+            input {
+                -webkit-appearance: none;
+                border: none;
+                text-align: right;
+                max-width: 50%;
+                background: transparent;
+                margin-left: -24%;
+
+                &::-webkit-outer-spin-button,
+                &::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+            }
         }
     }
 
