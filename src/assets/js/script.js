@@ -28,7 +28,6 @@
                 openAside = $('#openHeaderAside'),
                 closeAside = $('#closeHeaderAside');
 
-
             if (btcPay.winWidth < 500) {
                 mainHeader.removeClass('aside_visible');
                 main.removeClass('aside_visible');
@@ -489,3 +488,29 @@
     });
 
 })(jQuery);
+
+// 
+
+let sObj = {
+    type: success,
+    message: 'success! success! success!'
+};
+let eObj = {
+    type: error,
+    message: 'error! error! error!'
+};
+
+showPopup(sObj);
+showPopup(eObj);
+
+function showPopup(obj) {
+    let el = obj.type,
+        msg = obj.message,
+        textEl = el.querySelector('.popup__text');
+
+    textEl.innerHTML = msg;
+    el.classList.add('visible');
+    setTimeout(() => {
+        el.classList.remove('visible');
+    }, 5000);
+}
