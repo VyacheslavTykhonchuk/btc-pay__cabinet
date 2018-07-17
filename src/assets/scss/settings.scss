@@ -2,6 +2,10 @@
     &__content {
         grid-template-columns: 1.1fr 1.5fr 0.65fr;
 
+        @media (max-width: 430px) {
+            grid-template-columns: 1fr;
+        }
+
         &__item {
             display: flex;
             flex-direction: column;

@@ -22,12 +22,17 @@
             btcPay.initComission();
 
         },
-        initHeader: function name(params) {
+        initHeader: function () {
             let main = $('main'),
                 mainHeader = $('#mainHeader'),
                 openAside = $('#openHeaderAside'),
                 closeAside = $('#closeHeaderAside');
 
+
+            if (btcPay.winWidth < 500) {
+                mainHeader.removeClass('aside_visible');
+                main.removeClass('aside_visible');
+            }
             openAside.on('click', function () {
                 mainHeader.addClass('aside_visible');
                 main.addClass('aside_visible');
