@@ -167,6 +167,10 @@
 
             & + * {
                 margin-top: 95px;
+
+                @media (max-width: 430px) {
+                    margin-top: 36px;
+                }
             }
         }
 
@@ -177,6 +181,10 @@
 
             > * + * {
                 margin-top: 36px;
+
+                @media (max-width: 430px) {
+                    margin-top: 16px;
+                }
             }
 
             &__item {
@@ -311,6 +319,10 @@
             &__bottom {
                 position: absolute;
                 bottom: 80px;
+
+                @media (max-width: 430px) {
+                    bottom: 30px;
+                }
 
                 > * + * {
                     margin-top: 36px;

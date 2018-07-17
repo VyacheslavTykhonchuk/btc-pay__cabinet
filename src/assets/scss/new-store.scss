@@ -2,6 +2,11 @@
     .main__section__new_store {
         grid-template-columns: 1.1fr 1.5fr 0.65fr;
         grid-template-rows: 270px 450px;
+        @media (max-width: 430px) {
+            grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        }
     }
 
     .section__payment {

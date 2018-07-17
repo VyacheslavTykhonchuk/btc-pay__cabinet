@@ -99,6 +99,7 @@ main {
 
             @media (max-width: 430px) {
                 grid-column: 1 !important;
+                grid-row: auto !important;
             }
 
             &__col_1-2 {
@@ -652,6 +653,17 @@ main {
     }
 }
 
+@media (max-width: 430px) {
+    .custom_list__wrap, .section__payment {
+        padding-bottom: 130px;
+    }
+
+    .custom_list__wrap {
+        max-width: 80vw;
+        overflow: scroll;
+    }
+}
+
 .custom_list {
     &__wrap {
         margin-top: 50px;
@@ -916,7 +928,8 @@ main {
 
 .inactive {
     opacity: 0.5;
-    pointer-events: none;
+
+    // pointer-events: none;
 }
 
 .active {
