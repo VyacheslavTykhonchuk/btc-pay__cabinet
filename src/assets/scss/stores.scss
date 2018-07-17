@@ -44,10 +44,19 @@
             align-items: center;
             justify-content: space-between;
 
+            @media (max-width: 430px) {
+                width: 100%;
+                overflow: scroll;
+            }
+
             &__item {
                 display: flex;
                 font-family: 'CoreSansG';
                 font-weight: 700;
+
+                @media (max-width: 430px) {
+                    min-width: 185px;
+                }
 
                 &__currencies_rates {
                     display: flex;
@@ -104,8 +113,11 @@
     }
 
     &__content {
-        grid-template-columns: repeat(3, 1fr);
         grid-template-columns: 1.165fr 1.165fr 1fr;
+
+        @media (max-width: 430px) {
+            grid-template-columns: 1fr !important;
+        }
 
         &__graphs {
             overflow: hidden;
@@ -147,6 +159,10 @@
             grid-gap: 30px;
             position: relative;
 
+            @media (max-width: 430px) {
+                grid-template-columns: 1fr !important;
+            }
+
             &__item {
                 display: flex;
                 flex-direction: column;
@@ -154,6 +170,10 @@
                 justify-content: center;
                 height: 210px;
                 transition: all 0.4s;
+
+                @media (max-width: 430px) {
+                    height: 110px;
+                }
 
                 &__add {
                     cursor: pointer;
@@ -189,15 +209,27 @@
         &__full_history {
             .main__stores__content__history {
                 grid-row: 1/3;
+
+                @media (max-width: 430px) {
+                    grid-row: 3;
+                }
             }
 
             .main__stores__content__graphs img {
                 width: 106.1%;
+
+                @media (max-width: 430px) {
+                    grid-row: 1;
+                }
             }
 
             .main__stores__content__stores {
                 grid-template-columns: 1fr 1fr;
-                grid-column: 1/3;
+
+                @media (max-width: 430px) {
+                    grid-column: 1;
+                    grid-template-columns: 1fr;
+                }
             }
         }
     }
