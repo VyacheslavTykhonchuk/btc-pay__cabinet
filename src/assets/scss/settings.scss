@@ -11,6 +11,10 @@
             flex-direction: column;
             align-items: center;
 
+            @media (max-width: 430px) {
+                // width: calc(100% - 75px);
+            }
+
             &__wrap {
                 &__item {
                     width: 100%;
@@ -136,6 +140,7 @@
         input {
             width: 200px;
             margin-top: 14px;
+            max-width: 80%;
         }
 
         * + * {
@@ -199,6 +204,10 @@
 
 .login_history {
     &__table {
+        @media (max-width: 430px) {
+            width: calc(100% - 75px);
+        }
+
         tr {
             th {
                 width: calc(100% / 3);
@@ -206,6 +215,11 @@
                 border-bottom: 33px solid transparent;
                 border-left: 22px solid transparent;
                 text-align: left;
+
+                @media (max-width: 430px) {
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                }
 
                 span {
                     color: #4A4A4A;
@@ -220,6 +234,11 @@
                 border-bottom: 16px solid transparent;
                 border-top: 16px solid transparent;
                 border-left: 22px solid transparent;
+
+                @media (max-width: 430px) {
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                }
             }
 
             &:first-child {

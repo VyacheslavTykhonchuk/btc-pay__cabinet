@@ -1,6 +1,11 @@
 body {
     font-family: "FuturaPt";
     background: #F6F7FB;
+
+    @media (max-width: 430px) {
+        overflow-x: hidden;
+        width: 100vw;
+    }
 }
 
 .new_store * {

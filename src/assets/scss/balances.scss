@@ -2,9 +2,11 @@
     &__section {
         &__grid {
             grid-template-columns: repeat(3, 1fr);
-        }
 
-        &__item {}
+            @media (max-width: 430px) {
+                grid-template-columns: 1fr;
+            }
+        }
     }
 }
 
@@ -16,6 +18,12 @@
         width: calc((100% / 3) - 106px);
         margin: 15px;
         transition: all 0.4s;
+
+        @media (max-width: 430px) {
+            width: 100%;
+            margin: 15px 0;
+            box-sizing: border-box;
+        }
 
         &.withdraw_opened {
             // min-height: 410px;

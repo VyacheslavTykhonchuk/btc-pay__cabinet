@@ -182,12 +182,16 @@
             }
             function dynamicLayout() {
                 let grid = document.querySelector('.dynamic_layout');
-                let msnry = new Masonry(grid, {
-                    itemSelector: '.dynamic_layout__item',
-                    columnWidth: '.dynamic_layout__item',
-                    percentPosition: true,
-                    horizontalOrder: true
-                });
+
+                if (btcPay.winWidth > 430) {
+                    let msnry = new Masonry(grid, {
+                        itemSelector: '.dynamic_layout__item',
+                        columnWidth: '.dynamic_layout__item',
+                        percentPosition: true,
+                        horizontalOrder: true
+                    });
+                }
+
             }
         },
         initUploadPhoto: function (e) {

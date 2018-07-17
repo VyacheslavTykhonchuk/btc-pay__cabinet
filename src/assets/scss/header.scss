@@ -212,6 +212,15 @@
                 }
 
                 &__balances {
+                    &__icon {
+                        svg {
+                            @media (max-width: 430px) {
+                                width: 30px;
+                                height: 30px;
+                            }
+                        }
+                    }
+
                     &:hover {
                         .main_header__aside__nav__item__icon {
                             svg, path, rect, circle {
