@@ -491,17 +491,7 @@
 
 // 
 
-let sObj = {
-    type: success,
-    message: 'success! success! success!'
-};
-let eObj = {
-    type: error,
-    message: 'error! error! error!'
-};
 
-showPopup(sObj);
-showPopup(eObj);
 
 function showPopup(obj) {
     let el = obj.type,
