@@ -20,7 +20,6 @@
             btcPay.initMainGraph();
             btcPay.initImagePreview();
             btcPay.initComission();
-
         },
         initHeader: function () {
             let main = $('main'),
