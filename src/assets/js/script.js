@@ -47,9 +47,19 @@
             let openDropdown = $('.openSortDropdown');
             openDropdown.each(function () {
                 $(this).on('click', function () {
+                    $(this).toggleClass('drop_opened');
                     $(this).parent('th').toggleClass('drop_opened');
                 });
             });
+
+            toggleFilters();
+
+            function toggleFilters() {
+                let toggle = $('.toggleFilters');
+                toggle.on('click', function () {
+                    $(this).toggleClass('filtersVisible');
+                });
+            }
         },
         initCheckbox: function () {
             if (!$('.haveCheckbox').length) return false;
