@@ -161,6 +161,7 @@
 
             @media (max-width: 430px) {
                 grid-template-columns: 1fr !important;
+                grid-row: 2;
             }
 
             &__item {

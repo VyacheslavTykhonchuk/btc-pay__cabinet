@@ -714,8 +714,6 @@ main {
             &:first-child {
                 transform: translate(0, 7px) rotate(180deg) !important;
             }
-
-            &:last-child {}
         }
     }
 
@@ -912,8 +910,16 @@ main {
     display: flex;
     justify-content: space-between;
 
+    @media (max-width: 430px) {
+        flex-wrap: wrap;
+    }
+
     .billing-plan {
         width: 33%;
+
+        @media (max-width: 430px) {
+            width: 100%;
+        }
     }
 }
 
@@ -932,6 +938,11 @@ main {
 
     & + * {
         margin-left: 30px;
+
+        @media (max-width: 430px) {
+            margin-left: 0;
+            margin-top: 30px;
+        }
     }
 
     &:hover {
@@ -1186,6 +1197,10 @@ main {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+
+    @media (min-width: 480px) {
+        display: none;
+    }
 
     &__item {
         border-radius: 8px;
