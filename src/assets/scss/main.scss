@@ -178,7 +178,9 @@ main {
     border-collapse: separate;
 
     @media (max-width: 430px) {
-        display: none;
+        &:not(.login_history__table) {
+            display: none;
+        }
     }
 
     &__head_row {
