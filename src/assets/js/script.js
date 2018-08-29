@@ -730,7 +730,6 @@
 })(jQuery);
 
 //
-
 function showPopup(obj) {
   let el = obj.type,
     msg = obj.message,

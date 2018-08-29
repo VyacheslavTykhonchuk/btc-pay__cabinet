@@ -686,7 +686,6 @@ main {
 
 .bottom_btns {
     position: absolute;
-    bottom: 45px;
     display: flex;
     width: calc(100% - 50px);
     flex-direction: column;
@@ -701,7 +700,14 @@ main {
     }
 
     &.upper {
-        padding-bottom: 22px;
+        // padding-bottom: 22px;
+   
+    }
+}
+
+#contact-form {
+    .bottom_btns {
+        bottom: 6px;
     }
 }
 
@@ -1502,5 +1508,11 @@ main {
         svg {
             transform: rotate(90deg);
         }
+    }
+}
+
+form {
+    .form-group + .form-group {
+        margin-top: 60px;
     }
 }
