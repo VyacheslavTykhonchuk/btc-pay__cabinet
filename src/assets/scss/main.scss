@@ -1,5 +1,5 @@
 body {
-    font-family: "FuturaPt";
+    font-family: 'FuturaPt';
     background: #F6F7FB;
 
     @media (max-width: 430px) {
@@ -649,14 +649,14 @@ main {
         display: flex;
         flex-direction: column;
 
-        input[type="text"] {
+        input[type='text'] {
             font-weight: $book;
             font-size: 10px;
             color: $darkGray;
             margin-top: 30px;
         }
 
-        input[type="reset"] {
+        input[type='reset'] {
             font-size: 10px;
             color: $darkGray;
             font-weight: $medium;
@@ -781,6 +781,7 @@ main {
     background: transparent;
     text-transform: uppercase;
     cursor: pointer;
+    z-index: 99;
 
     &.opened {
         .custom_select__choosen {
@@ -791,6 +792,8 @@ main {
 
         .custom_select__options {
             max-height: 500px;
+            background: white;
+            padding: 0.3rem;
         }
 
         .hideOptions {
@@ -808,6 +811,8 @@ main {
         color: $darkGray;
         display: flex;
         align-items: center;
+        min-width: 78px;
+        justify-content: flex-end;
 
         * + * {
             margin-left: 16px;

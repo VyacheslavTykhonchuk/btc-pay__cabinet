@@ -1,5 +1,5 @@
 (function($) {
-  "use strict";
+  'use strict';
 
   window.btcPay = $.extend(
     {},
@@ -7,8 +7,8 @@
       winWidth: $(window).width(),
       winHeight: $(window).height(),
       winScroll: $(window).scrollTop(),
-      preloader: $(".preloader"),
-      modalWindow: $(".modal"),
+      preloader: $('.preloader'),
+      modalWindow: $('.modal'),
 
       init: function() {
         btcPay.initHeader();
@@ -25,120 +25,120 @@
         btcPay.initCopyBlock();
       },
       initCopyBlock: function() {
-        let copyBlock = $(".copyBlock"),
-          btn = copyBlock.find(".copyInputVal"),
-          input = copyBlock.find(".inputToCopy");
+        let copyBlock = $('.copyBlock'),
+          btn = copyBlock.find('.copyInputVal'),
+          input = copyBlock.find('.inputToCopy');
 
-        btn.on("click", function() {
+        btn.on('click', function() {
           input.select();
-          document.execCommand("copy");
+          document.execCommand('copy');
           input.blur();
-          copyBlock.addClass("show-copy");
+          copyBlock.addClass('show-copy');
           setTimeout(() => {
-            copyBlock.removeClass("show-copy");
+            copyBlock.removeClass('show-copy');
           }, 1750);
         });
       },
       initHeader: function() {
-        let main = $("main"),
-          mainHeader = $("#mainHeader"),
-          openAside = $("#openHeaderAside"),
-          closeAside = $("#closeHeaderAside");
+        let main = $('main'),
+          mainHeader = $('#mainHeader'),
+          openAside = $('#openHeaderAside'),
+          closeAside = $('#closeHeaderAside');
 
         if (btcPay.winWidth < 500) {
-          mainHeader.removeClass("aside_visible");
-          main.removeClass("aside_visible");
+          mainHeader.removeClass('aside_visible');
+          main.removeClass('aside_visible');
         }
-        openAside.on("click", function() {
-          mainHeader.addClass("aside_visible");
-          main.addClass("aside_visible");
+        openAside.on('click', function() {
+          mainHeader.addClass('aside_visible');
+          main.addClass('aside_visible');
         });
-        closeAside.on("click", function() {
-          mainHeader.removeClass("aside_visible");
-          main.removeClass("aside_visible");
+        closeAside.on('click', function() {
+          mainHeader.removeClass('aside_visible');
+          main.removeClass('aside_visible');
         });
       },
       initTableDropdown: function() {
-        if (!$(".openSortDropdown").length) return false;
+        if (!$('.openSortDropdown').length) return false;
 
-        let openDropdown = $(".openSortDropdown");
+        let openDropdown = $('.openSortDropdown');
         openDropdown.each(function() {
-          $(this).on("click", function() {
-            $(this).toggleClass("drop_opened");
+          $(this).on('click', function() {
+            $(this).toggleClass('drop_opened');
             $(this)
-              .parent("th")
-              .toggleClass("drop_opened");
+              .parent('th')
+              .toggleClass('drop_opened');
           });
         });
 
         toggleFilters();
 
         function toggleFilters() {
-          let toggle = $(".toggleFilters");
-          toggle.on("click", function() {
-            $(this).toggleClass("filtersVisible");
+          let toggle = $('.toggleFilters');
+          toggle.on('click', function() {
+            $(this).toggleClass('filtersVisible');
           });
         }
       },
       initCheckbox: function() {
-        if (!$(".haveCheckbox").length) return false;
+        if (!$('.haveCheckbox').length) return false;
 
-        let parent = $(".haveCheckbox"),
-          checkbox = $(".fakeCheckbox"),
-          hiddenCheckbox = $(".hiddenCheckbox");
+        let parent = $('.haveCheckbox'),
+          checkbox = $('.fakeCheckbox'),
+          hiddenCheckbox = $('.hiddenCheckbox');
 
         checkbox.each(function() {
-          $(this).on("click", function() {
-            if ($(this).hasClass("fakeRadio")) {
+          $(this).on('click', function() {
+            if ($(this).hasClass('fakeRadio')) {
               if (
                 $(this)
                   .closest(parent)
                   .find(hiddenCheckbox)
-                  .prop("checked")
+                  .prop('checked')
               ) {
                 return;
               } else {
                 $(this)
                   .closest(parent)
                   .siblings()
-                  .find(".fakeCheckbox")
-                  .removeClass("checked");
+                  .find('.fakeCheckbox')
+                  .removeClass('checked');
                 $(this)
                   .closest(parent)
                   .siblings()
                   .find(hiddenCheckbox)
-                  .prop("checked", false);
+                  .prop('checked', false);
                 $(this)
                   .closest(parent)
                   .siblings()
-                  .removeClass("radioActive");
+                  .removeClass('radioActive');
                 $(this)
                   .closest(parent)
-                  .addClass("radioActive");
+                  .addClass('radioActive');
                 $(this)
                   .closest(parent)
                   .find(hiddenCheckbox)
-                  .prop("checked", true);
-                $(this).toggleClass("checked");
+                  .prop('checked', true);
+                $(this).toggleClass('checked');
               }
             } else {
-              $(this).toggleClass("checked");
+              $(this).toggleClass('checked');
 
               if (
                 $(this)
                   .closest(parent)
                   .find(hiddenCheckbox)
-                  .prop("checked")
+                  .prop('checked')
               ) {
                 $(this)
                   .closest(parent)
                   .find(hiddenCheckbox)
-                  .prop("checked", false);
+                  .prop('checked', false);
               } else {
                 $(this)
                   .closest(parent)
                   .find(hiddenCheckbox)
-                  .prop("checked", true);
+                  .prop('checked', true);
               }
             }
             $(this)
@@ -149,59 +149,59 @@
         });
         function initLoadCheckboxes() {
           checkbox.each(function() {
-            if ($(this).hasClass("fakeRadio")) {
+            if ($(this).hasClass('fakeRadio')) {
               if (
                 $(this)
                   .closest(parent)
                   .find(hiddenCheckbox)
-                  .prop("checked")
+                  .prop('checked')
               ) {
                 $(this)
                   .closest(parent)
                   .find(checkbox)
-                  .addClass("checked");
+                  .addClass('checked');
                 $(this)
                   .closest(parent)
-                  .addClass("radioActive");
-                $(this)
-                  .closest(parent)
-                  .siblings()
-                  .find(".fakeCheckbox")
-                  .removeClass("checked");
+                  .addClass('radioActive');
                 $(this)
                   .closest(parent)
                   .siblings()
-                  .removeClass("radioActive");
+                  .find('.fakeCheckbox')
+                  .removeClass('checked');
+                $(this)
+                  .closest(parent)
+                  .siblings()
+                  .removeClass('radioActive');
                 $(this)
                   .closest(parent)
                   .siblings()
                   .find(hiddenCheckbox)
-                  .prop("checked", false);
+                  .prop('checked', false);
               } else {
                 $(this)
                   .closest(parent)
                   .find(checkbox)
-                  .removeClass("checked");
+                  .removeClass('checked');
                 $(this)
                   .closest(parent)
-                  .removeClass("radioActive");
+                  .removeClass('radioActive');
               }
             } else {
               if (
                 $(this)
                   .closest(parent)
                   .find(hiddenCheckbox)
-                  .prop("checked")
+                  .prop('checked')
               ) {
                 $(this)
                   .closest(parent)
                   .find(checkbox)
-                  .addClass("checked");
+                  .addClass('checked');
               } else {
                 $(this)
                   .closest(parent)
                   .find(checkbox)
-                  .removeClass("checked");
+                  .removeClass('checked');
               }
             }
           });
@@ -209,175 +209,182 @@
         initLoadCheckboxes();
       },
       initSupportInfo: function() {
-        if (!$(".showInfo").length) return false;
-        let showInfo = $(".showInfo"),
-          hideInfo = $(".hideInfo");
+        if (!$('.showInfo').length) return false;
+        let showInfo = $('.showInfo'),
+          hideInfo = $('.hideInfo');
         showInfo.each(function() {
-          $(this).on("click", function() {
-            $(this).addClass("showInfo__visible");
-            $(this).removeClass("transparent");
+          $(this).on('click', function() {
+            $(this).addClass('showInfo__visible');
+            $(this).removeClass('transparent');
           });
         });
         hideInfo.each(function(e) {
-          $(this).on("click", function(e) {
+          $(this).on('click', function(e) {
             $(this)
               .closest(showInfo)
-              .removeClass("showInfo__visible");
+              .removeClass('showInfo__visible');
             $(this)
               .closest(showInfo)
-              .addClass("transparent");
+              .addClass('transparent');
             e.stopPropagation();
           });
         });
       },
       initBalances: function() {
-        if (!$(".balanceItem").length) return false;
-        let balanceItem = $(".balanceItem"),
-          openWithdraw = $(".openWithdraw");
+        if (!$('.balanceItem').length) return false;
+        let balanceItem = $('.balanceItem'),
+          openWithdraw = $('.openWithdraw');
 
         dynamicLayout();
         initOpenWithdraw();
         initScrollReveal();
 
         function initScrollReveal() {
-          let el = $(".balanceItem.transparent");
+          let el = $('.balanceItem.transparent');
 
           el.each(function() {
             let elCenter = 0,
               elOffset = $(this).offset().top,
               $this = $(this);
 
-            $(window).on("scroll", function() {
+            $(window).on('scroll', function() {
               let scroll =
                 $(window).scrollTop() + $(window).innerHeight() - 250;
 
               if (elOffset - elCenter < scroll) {
-                $this.removeClass("transparent");
+                $this.removeClass('transparent');
               }
             });
           });
         }
         function initOpenWithdraw() {
           openWithdraw.each(function(e) {
-            $(this).on("click", function(e) {
+            $(this).on('click', function(e) {
               if (
                 !$(this)
                   .closest(balanceItem)
-                  .hasClass("withdraw_opened")
+                  .hasClass('withdraw_opened')
               )
                 e.preventDefault();
 
-              $(this).addClass("noTransition");
+              $(this).addClass('noTransition');
               $(this)
                 .closest(balanceItem)
-                .addClass("withdraw_opened");
+                .addClass('withdraw_opened');
               e.stopPropagation();
 
               // call re-shuffle
               dynamicLayout();
 
-              $(this).removeClass("noTransition");
+              $(this).removeClass('noTransition');
             });
           });
         }
         function dynamicLayout() {
-          let grid = document.querySelector(".dynamic_layout");
+          let grid = document.querySelector('.dynamic_layout');
 
           if (btcPay.winWidth > 430) {
             let msnry = new Masonry(grid, {
-              itemSelector: ".dynamic_layout__item",
-              columnWidth: ".dynamic_layout__item",
+              itemSelector: '.dynamic_layout__item',
+              columnWidth: '.dynamic_layout__item',
               percentPosition: true,
-              horizontalOrder: true
+              horizontalOrder: true,
             });
           }
         }
       },
       initUploadPhoto: function(e) {
-        if (!$("#uploadPhoto").length) return false;
-        let uploadPhoto = $("#uploadPhoto"),
-          hiddenInput = $("#upload");
-        uploadPhoto.on("click", function() {
-          document.querySelector("input#upload").click();
+        if (!$('#uploadPhoto').length) return false;
+        let uploadPhoto = $('#uploadPhoto'),
+          hiddenInput = $('#upload');
+        uploadPhoto.on('click', function() {
+          document.querySelector('input#upload').click();
         });
       },
       initCustomSelect: function() {
-        if (!$(".custom_select").length) return false;
-        let toggleSelect = $(".toggleSelect"),
-          selectOption = $(".selectOption"),
-          showOptions = $(".showOptions"),
-          hideOptions = $(".hideOptions");
+        if (!$('.custom_select').length) return false;
+        let toggleSelect = $('.toggleSelect'),
+          selectOption = $('.selectOption'),
+          showOptions = $('.showOptions'),
+          hideOptions = $('.hideOptions');
 
         toggleSelect.each(function() {
-          $(this).on("click", function() {
+          $(this).on('click', function() {
             $(this)
-              .closest(".custom_select")
-              .toggleClass("opened");
+              .closest('.custom_select')
+              .toggleClass('opened');
           });
         });
         selectOption.each(function() {
-          $(this).on("click", function() {
-            let newCurrency = $(this).attr("data-currency"),
-              prevCurrency = $(this)
-                .closest(".custom_select")
-                .find(".custom_select__choosen")
-                .attr("data-choosen");
-
+          $(this).on('click', function() {
+            const newCurrency = $(this).attr('data-currency');
             $(this)
-              .closest(".custom_select")
-              .find(".custom_select__choosen")
-              .attr("data-choosen", newCurrency);
-            $(this).attr("data-currency", prevCurrency);
+              .closest('.custom_select')
+              .find('.custom_select__choosen span')
+              .text(newCurrency);
             $(this)
-              .closest(".custom_select")
-              .toggleClass("opened");
-            refreshItemData($(".custom_select__choosen"));
-            refreshItemData($(this));
+              .closest('.custom_select')
+              .toggleClass('opened');
+            //   let newCurrency = $(this).attr('data-currency'),
+            //     prevCurrency = $(this)
+            //       .closest('.custom_select')
+            //       .find('.custom_select__choosen')
+            //       .attr('data-choosen');
+            //   $(this)
+            //     .closest('.custom_select')
+            //     .find('.custom_select__choosen')
+            //     .attr('data-choosen', newCurrency);
+            //   $(this).attr('data-currency', prevCurrency);
+            //   $(this)
+            //     .closest('.custom_select')
+            //     .toggleClass('opened');
+            //   refreshItemData($('.custom_select__choosen'));
+            //   refreshItemData($(this));
           });
         });
 
         function refreshItemData(item) {
           item.each(function() {
-            if ($(this).attr("data-choosen")) {
-              let data = $(this).attr("data-choosen");
+            if ($(this).attr('data-choosen')) {
+              let data = $(this).attr('data-choosen');
               $(this)
-                .find("span")
-                .html($(this).attr("data-choosen"));
+                .find('span')
+                .html($(this).attr('data-choosen'));
             } else {
-              let data = $(this).attr("data-currency");
+              let data = $(this).attr('data-currency');
               $(this)
-                .find("span")
-                .html($(this).attr("data-currency"));
+                .find('span')
+                .html($(this).attr('data-currency'));
             }
           });
         }
       },
       initGraphMenu: function() {
-        if (!$(".graphMenu").length) return false;
-        let graphMenu = $(".graphMenu"),
-          openMenu = $(".openGraphMenu"),
-          closeMenu = $(".closeGraphMenu");
-        openMenu.on("click", function() {
+        if (!$('.graphMenu').length) return false;
+        let graphMenu = $('.graphMenu'),
+          openMenu = $('.openGraphMenu'),
+          closeMenu = $('.closeGraphMenu');
+        openMenu.on('click', function() {
           $(this)
             .closest(graphMenu)
-            .addClass("opened");
+            .addClass('opened');
         });
-        closeMenu.on("click", function() {
+        closeMenu.on('click', function() {
           $(this)
             .closest(graphMenu)
-            .removeClass("opened");
+            .removeClass('opened');
         });
       },
       initImagePreview() {
-        if (!$("#upload").length) return false;
+        if (!$('#upload').length) return false;
 
-        $("#upload").change(function() {
+        $('#upload').change(function() {
           readURL(this);
-          $("#uploadPhoto")
-            .find("svg")
+          $('#uploadPhoto')
+            .find('svg')
             .hide();
-          $("#uploadPhoto")
-            .find("span")
+          $('#uploadPhoto')
+            .find('span')
             .hide();
         });
 
@@ -385,43 +392,43 @@
           if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-              $("#uploadedImage").attr("src", e.target.result);
+              $('#uploadedImage').attr('src', e.target.result);
             };
             reader.readAsDataURL(input.files[0]);
           }
         }
       },
       initComission() {
-        if (!$(".comissionHolder").length) return false;
-        let wrap = $(".comissionHolder");
+        if (!$('.comissionHolder').length) return false;
+        let wrap = $('.comissionHolder');
 
         wrap.each(function() {
           let abs = $(this).find('input[name="absolute"]'),
             per = $(this).find('input[name="percents"]');
 
-          abs.on("change", function() {
+          abs.on('change', function() {
             let checked = this.checked;
             if (checked) {
               $(this)
-                .closest(".comissionHolder")
-                .find(".comissionPercent")
+                .closest('.comissionHolder')
+                .find('.comissionPercent')
                 .hide();
             }
           });
-          per.on("change", function() {
+          per.on('change', function() {
             let checked = this.checked;
             if (checked) {
               $(this)
-                .closest(".comissionHolder")
-                .find(".comissionPercent")
+                .closest('.comissionHolder')
+                .find('.comissionPercent')
                 .show();
             }
           });
         });
       },
       initMainGraph: function() {
-        if (!$(".mainGraph").length) return false;
-        let initRange = "7";
+        if (!$('.mainGraph').length) return false;
+        let initRange = '7';
 
         // test arr
         const dateArr = [];
@@ -444,23 +451,23 @@
           days = daysInCurrentMonth();
 
           for (let index = 1; index <= days; index++) {
-            let str = "";
+            let str = '';
             if (month < 10) {
-              str = index + "/0" + month;
+              str = index + '/0' + month;
             } else {
-              str = index + "/" + month;
+              str = index + '/' + month;
             }
             dateArr.push(str);
           }
         }
         function findRange() {
-          $(".fakeCheckbox").on("click", function() {
+          $('.fakeCheckbox').on('click', function() {
             let newRange = $(this)
-              .closest(".haveCheckbox")
-              .attr("data-range");
+              .closest('.haveCheckbox')
+              .attr('data-range');
             // clear old canvas
-            $(".mainGraphCanvas").remove();
-            $(".mainGraph").append('<canvas class="mainGraphCanvas"></canvas>');
+            $('.mainGraphCanvas').remove();
+            $('.mainGraph').append('<canvas class="mainGraphCanvas"></canvas>');
             //
             drawGraph(dateArr, newRange);
           });
@@ -483,12 +490,12 @@
           }
 
           // graph initialization
-          let ctx = $(".mainGraphCanvas");
+          let ctx = $('.mainGraphCanvas');
           let data = {
             labels: localArr,
             datasets: [
               {
-                label: "BTC",
+                label: 'BTC',
                 data: [
                   2,
                   1.5,
@@ -531,20 +538,20 @@
                   1.8,
                   1.9,
                   2,
-                  2.1
+                  2.1,
                 ],
                 borderWidth: 4,
-                pointBackgroundColor: "hsl(47, 94%, 68%)",
-                pointBorderColor: "hsl(0, 0%, 100%)",
+                pointBackgroundColor: 'hsl(47, 94%, 68%)',
+                pointBorderColor: 'hsl(0, 0%, 100%)',
                 pointBorderWidth: 3,
                 pointRadius: bulletRadius,
                 pointHoverRadius: 10,
-                cubicInterpolationMode: "monotone",
-                backgroundColor: ["hsla(55, 94%, 54%,0.17)"],
-                borderColor: ["hsl(47, 94%, 68%)"]
+                cubicInterpolationMode: 'monotone',
+                backgroundColor: ['hsla(55, 94%, 54%,0.17)'],
+                borderColor: ['hsl(47, 94%, 68%)'],
               },
               {
-                label: "EOS",
+                label: 'EOS',
                 data: [
                   3,
                   2,
@@ -586,20 +593,20 @@
                   2.6,
                   2.7,
                   2.8,
-                  3
+                  3,
                 ],
                 borderWidth: 4,
-                pointBackgroundColor: "hsl(191, 100%, 50%)",
-                pointBorderColor: "hsl(0, 0%, 100%)",
+                pointBackgroundColor: 'hsl(191, 100%, 50%)',
+                pointBorderColor: 'hsl(0, 0%, 100%)',
                 pointBorderWidth: 3,
                 pointRadius: bulletRadius,
                 pointHoverRadius: 10,
-                cubicInterpolationMode: "monotone",
-                backgroundColor: ["hsla(191, 100%, 50%,.15)"],
-                borderColor: ["hsl(191, 100%, 50%)"]
+                cubicInterpolationMode: 'monotone',
+                backgroundColor: ['hsla(191, 100%, 50%,.15)'],
+                borderColor: ['hsl(191, 100%, 50%)'],
               },
               {
-                label: "ETH",
+                label: 'ETH',
                 data: [
                   1,
                   0.1,
@@ -641,24 +648,24 @@
                   0.5,
                   0.8,
                   0.1,
-                  1
+                  1,
                 ],
                 borderWidth: 4,
-                pointBackgroundColor: "hsl(287, 100%, 48%)",
-                pointBorderColor: "hsl(0, 0%, 100%)",
+                pointBackgroundColor: 'hsl(287, 100%, 48%)',
+                pointBorderColor: 'hsl(0, 0%, 100%)',
                 pointBorderWidth: 3,
                 pointRadius: bulletRadius,
                 pointHoverRadius: 10,
-                cubicInterpolationMode: "monotone",
-                backgroundColor: ["hsla(287, 100%, 48%,0.15)"],
-                borderColor: ["hsl(287, 100%, 48%)"]
-              }
-            ]
+                cubicInterpolationMode: 'monotone',
+                backgroundColor: ['hsla(287, 100%, 48%,0.15)'],
+                borderColor: ['hsl(287, 100%, 48%)'],
+              },
+            ],
           };
           let options = {
             maintainAspectRatio: false,
             legend: {
-              display: false
+              display: false,
             },
 
             layout: {
@@ -666,21 +673,21 @@
                 left: 0,
                 right: 0,
                 top: 32,
-                bottom: 0
-              }
+                bottom: 0,
+              },
             },
             scales: {
               xAxes: [
                 {
                   gridLines: {
-                    color: "rgba(0, 0, 0, 0)",
+                    color: 'rgba(0, 0, 0, 0)',
                     drawBorder: false,
-                    display: false
+                    display: false,
                   },
                   ticks: {
-                    fontFamily: "CoreSansG",
+                    fontFamily: 'CoreSansG',
                     fontSize: 12,
-                    fontColor: "hsla(0, 0%, 11%,0.5)"
+                    fontColor: 'hsla(0, 0%, 11%,0.5)',
                     // callback: function (value, index, values) {
                     //     if (index == 0) {
                     //         return null;
@@ -688,13 +695,13 @@
                     //         return index;
                     //     }
                     // }
-                  }
-                }
+                  },
+                },
               ],
               yAxes: [
                 {
                   gridLines: {
-                    drawBorder: false
+                    drawBorder: false,
                   },
                   pointLabels: false,
                   ticks: {
@@ -706,22 +713,22 @@
                       if (index == 0) {
                         return null;
                       } else {
-                        return "";
+                        return '';
                       }
-                    }
-                  }
-                }
-              ]
-            }
+                    },
+                  },
+                },
+              ],
+            },
           };
 
           let myLineChart = new Chart(ctx, {
-            type: "line",
+            type: 'line',
             data: data,
-            options: options
+            options: options,
           });
         }
-      }
+      },
     }
   );
   $(document).ready(function() {
@@ -733,11 +740,11 @@
 function showPopup(obj) {
   let el = obj.type,
     msg = obj.message,
-    textEl = el.querySelector(".popup__text");
+    textEl = el.querySelector('.popup__text');
 
   textEl.innerHTML = msg;
-  el.classList.add("visible");
+  el.classList.add('visible');
   setTimeout(() => {
-    el.classList.remove("visible");
+    el.classList.remove('visible');
   }, 5000);
 }
