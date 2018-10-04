@@ -311,18 +311,28 @@
             .closest('.custom_select')
             .toggleClass('opened');
         });
-        selectOption.each(function() {
-          $(this).on('click', function() {
-            const newCurrency = $(this).attr('data-currency');
-            $(this)
-              .closest('.custom_select')
-              .find('.custom_select__choosen span')
-              .text(newCurrency);
-            $(this)
-              .closest('.custom_select')
-              .toggleClass('opened');
-          });
+        $(document).on('click', '.selectOption', function() {
+          const newCurrency = $(this).attr('data-currency');
+          $(this)
+            .closest('.custom_select')
+            .find('.custom_select__choosen span')
+            .text(newCurrency);
+          $(this)
+            .closest('.custom_select')
+            .toggleClass('opened');
         });
+        // selectOption.each(function() {
+        //   $(this).on('click', function() {
+        //     const newCurrency = $(this).attr('data-currency');
+        //     $(this)
+        //       .closest('.custom_select')
+        //       .find('.custom_select__choosen span')
+        //       .text(newCurrency);
+        //     $(this)
+        //       .closest('.custom_select')
+        //       .toggleClass('opened');
+        //   });
+        // });
       },
       initGraphMenu: function() {
         if (!$('.graphMenu').length) return false;
