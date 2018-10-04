@@ -303,17 +303,13 @@
       },
       initCustomSelect: function() {
         if (!$('.custom_select').length) return false;
-        let toggleSelect = $('.toggleSelect'),
-          selectOption = $('.selectOption'),
+        const selectOption = $('.selectOption'),
           showOptions = $('.showOptions'),
           hideOptions = $('.hideOptions');
-
-        toggleSelect.each(function() {
-          $(this).on('click', function() {
-            $(this)
-              .closest('.custom_select')
-              .toggleClass('opened');
-          });
+        $(document).on('click', '.toggleSelect', function() {
+          $(this)
+            .closest('.custom_select')
+            .toggleClass('opened');
         });
         selectOption.each(function() {
           $(this).on('click', function() {
@@ -325,39 +321,8 @@
             $(this)
               .closest('.custom_select')
               .toggleClass('opened');
-            //   let newCurrency = $(this).attr('data-currency'),
-            //     prevCurrency = $(this)
-            //       .closest('.custom_select')
-            //       .find('.custom_select__choosen')
-            //       .attr('data-choosen');
-            //   $(this)
-            //     .closest('.custom_select')
-            //     .find('.custom_select__choosen')
-            //     .attr('data-choosen', newCurrency);
-            //   $(this).attr('data-currency', prevCurrency);
-            //   $(this)
-            //     .closest('.custom_select')
-            //     .toggleClass('opened');
-            //   refreshItemData($('.custom_select__choosen'));
-            //   refreshItemData($(this));
           });
         });
-
-        function refreshItemData(item) {
-          item.each(function() {
-            if ($(this).attr('data-choosen')) {
-              let data = $(this).attr('data-choosen');
-              $(this)
-                .find('span')
-                .html($(this).attr('data-choosen'));
-            } else {
-              let data = $(this).attr('data-currency');
-              $(this)
-                .find('span')
-                .html($(this).attr('data-currency'));
-            }
-          });
-        }
       },
       initGraphMenu: function() {
         if (!$('.graphMenu').length) return false;
