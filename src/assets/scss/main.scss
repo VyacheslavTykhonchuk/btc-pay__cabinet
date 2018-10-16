@@ -1521,3 +1521,36 @@ form#contact-form {
         margin-top: 60px;
     }
 }
+
+.convert-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 400px;
+
+    &__row {
+        display: flex;
+        align-items: flex-end;
+
+        > svg#Capa_1 {
+            margin-bottom: -11px;
+        }
+
+        .text-w-select, .text-w-input {
+            margin-top: 0;
+
+            > * {
+                width: 100%;
+            }
+
+            & + * {
+                margin-left: 1rem;
+            }
+        }
+
+        & + * {
+            margin-top: 1rem;
+        }
+    }
+}
