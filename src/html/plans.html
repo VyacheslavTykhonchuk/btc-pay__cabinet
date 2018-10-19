@@ -1,21 +1,70 @@
-@@include('modules/html-head.html',{ "bodyClass": "plan_body", "pageTitle": "Plans" }) @@include('modules/header.html',{
+@@include('modules/html-head.html',{ "bodyClass": "plan_body", "pageTitle": "Plans" })
+@@include('modules/header.html',{
 "headerClass": "" })
 <div class="wrap">
     <main class="aside_visible main__stores plan__main">
         <section class="billing ">
             <div class="billing-plan">
                 <header class="billing-plan__title">
-                    Free trial
+                    Basic
                 </header>
                 <span class="billing-plan__price">
-                    $0
+                    $199
                 </span>
                 <p class="billing-plan__text-title">Availabel features:</p>
                 <div class="billing-plan__text">
-                    <p class="billing-plan__text-item">1 E- commerce store</p>
-                    <p class="billing-plan__text-item">2 Cryptocurrency BTC</p>
+                    <p class="billing-plan__text-item">5 E- commerce store</p>
+                    <p class="billing-plan__text-item">3 Cryptocurrency</p>
+                    <p class="billing-plan__text-item">BTC, ETH, LTC</p>
                 </div>
-                <a href="" class="main__section__cta__btn">Try is now</a>
+                <section class="plan-form-wrap select-form-hidden main__section__item main__settings__content__item main__settings__content__item__wrap">
+                    <form action="">
+                        <div class="text-w-select" style="justify-content: center;">
+                            <div class="text-w-select__select main__table__head_row__sort openSortDropdown " id="sortcurrency">
+                                <span>
+                                    Cryptocurrency</span>
+                                <div>
+                                    <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <defs></defs>
+                                        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                                <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) "
+                                                    id="ic_back">
+                                                    <g>
+                                                        <g id="back" transform="translate(8.000000, 4.000000)">
+                                                            <path d="M8,0 L0,8" id="Line"></path>
+                                                            <path d="M0,8 L8,16" id="Line"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="sort_dropdown">
+                                    <ul class="sort_dropdown__list">
+                                        <li class="sort_dropdown__list__item">
+                                            <a data-currencies_id="1" data-currencies_name="BTC - 0.00609" data-balance="0.00609">BTC
+                                                - 0.00609</a>
+                                        </li>
+                                        <li class="sort_dropdown__list__item">
+                                            <a data-currencies_id="2" data-currencies_name="ETH - 0.04" data-balance="0.04">ETH
+                                                - 0.04</a>
+                                        </li>
+                                        <li class="sort_dropdown__list__item">
+                                            <a data-currencies_id="3" data-currencies_name="LTC - 0" data-balance="0">LTC
+                                                - 0</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn_big btn_big_gradient">Save</button>
+                    </form>
+                </section>
+                <a href="" class="main__section__cta__btn showSelectForm">Try is now</a>
             </div>
             <div class="billing-plan">
                 <header class="billing-plan__title">
@@ -30,22 +79,85 @@
                     <p class="billing-plan__text-item">3 Cryptocurrency</p>
                     <p class="billing-plan__text-item">BTC, ETH, LTC</p>
                 </div>
-                <a href="" class="main__section__cta__btn">Try is now</a>
+                <section class="plan-form-wrap select-form-hidden main__section__item main__settings__content__item main__settings__content__item__wrap">
+                    <form action="">
+                        <div class="text-w-select" style="justify-content: center;">
+                            <div class="text-w-select__select main__table__head_row__sort openSortDropdown " id="sortcurrency">
+                                <span>
+                                    Cryptocurrency</span>
+                                <div>
+                                    <svg width="10px" height="10px" viewBox="0 0 18 8" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <defs></defs>
+                                        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <g id="ic_down" transform="translate(-3.000000, -8.000000)" stroke="#4A4A4A">
+                                                <g transform="translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) "
+                                                    id="ic_back">
+                                                    <g>
+                                                        <g id="back" transform="translate(8.000000, 4.000000)">
+                                                            <path d="M8,0 L0,8" id="Line"></path>
+                                                            <path d="M0,8 L8,16" id="Line"></path>
+                                                        </g>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="sort_dropdown">
+                                    <ul class="sort_dropdown__list">
+                                        <li class="sort_dropdown__list__item">
+                                            <a data-currencies_id="1" data-currencies_name="BTC - 0.00609" data-balance="0.00609">BTC
+                                                - 0.00609</a>
+                                        </li>
+                                        <li class="sort_dropdown__list__item">
+                                            <a data-currencies_id="2" data-currencies_name="ETH - 0.04" data-balance="0.04">ETH
+                                                - 0.04</a>
+                                        </li>
+                                        <li class="sort_dropdown__list__item">
+                                            <a data-currencies_id="3" data-currencies_name="LTC - 0" data-balance="0">LTC
+                                                - 0</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn_big btn_big_gradient">Save</button>
+                    </form>
+                </section>
+                <a href="" class="main__section__cta__btn showSelectForm">Try is now</a>
             </div>
             <div class="billing-plan">
                 <header class="billing-plan__title">
-                    Pro
+                    Basic
                 </header>
-                <span class="billing-plan__price">
-                    $299
-                </span>
-                <p class="billing-plan__text-title">Availabel features:</p>
-                <div class="billing-plan__text">
-                    <p class="billing-plan__text-item">1 No limit e-commerce stores </p>
-                    <p class="billing-plan__text-item billing-plan__text-item_margin-top">2 Cryptocurrency BTC, ETH, LTC, DASH,BTG, BTC, ETC, XMR,ZEC</p>
-                    <p class="billing-plan__text-item billing-plan__text-item_margin-top">SMS - notification Integration Support 24/7</p>
-                </div>
-                <a href="" class="main__section__cta__btn">Try is now</a>
+                <section class=" plan-form-wrap main__section__item main__settings__content__item main__settings__content__item__wrap">
+                    <form action="">
+                        <div class="main__settings__content__item__wrap__item__form__item main__settings__content__item__wrap__item_account__form__item field-accountform-firstname required has-success">
+
+                            <input type="text" id="accountform-firstname" class="" name="AccountForm[firstname]" value="Тест"
+                                aria-required="true" aria-invalid="false">
+
+                            <div class="help-block"></div>
+                        </div>
+                        <div class="main__settings__content__item__wrap__item__form__item main__settings__content__item__wrap__item_account__form__item field-accountform-firstname required has-success">
+
+                            <input type="text" id="accountform-firstname" class="" name="AccountForm[firstname]" value="Тест"
+                                aria-required="true" aria-invalid="false">
+
+                            <div class="help-block"></div>
+                        </div>
+                        <div class="main__settings__content__item__wrap__item__form__item main__settings__content__item__wrap__item_account__form__item field-accountform-firstname required has-success">
+
+                            <input type="text" id="accountform-firstname" class="" name="AccountForm[firstname]" value="Тест"
+                                aria-required="true" aria-invalid="false">
+
+                            <div class="help-block"></div>
+                        </div>
+                        <button type="submit" class="btn btn_big btn_big_gradient">Save</button>
+                    </form>
+                </section>
             </div>
         </section>
     </main>

@@ -23,6 +23,24 @@
         btcPay.initImagePreview();
         btcPay.initComission();
         btcPay.initCopyBlock();
+        btcPay.initPlansForm();
+      },
+      initPlansForm() {
+        if (!$('.select-form-hidden').length) return;
+        const selectFormHidden = $('.select-form-hidden');
+        const btn = $('.showSelectForm');
+        btn.each(function() {
+          const btn = $(this);
+          btn.on('click', function(e) {
+            e.preventDefault();
+            const block = btn.parent('.billing-plan');
+            block.find('.select-form-hidden').addClass('visible');
+            block.find('.billing-plan__price').hide();
+            block.find('.billing-plan__text-title').hide();
+            block.find('.billing-plan__text').hide();
+            btn.hide();
+          });
+        });
       },
       initCopyBlock: function() {
         let copyBlock = $('.copyBlock'),
