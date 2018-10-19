@@ -253,7 +253,7 @@
         let balanceItem = $('.balanceItem'),
           openWithdraw = $('.openWithdraw');
 
-        dynamicLayout();
+        btcPay.dynamicLayout();
         initOpenWithdraw();
         initScrollReveal();
 
@@ -292,23 +292,23 @@
               e.stopPropagation();
 
               // call re-shuffle
-              dynamicLayout();
+              btcPay.dynamicLayout();
 
               $(this).removeClass('noTransition');
             });
           });
         }
-        function dynamicLayout() {
-          let grid = document.querySelector('.dynamic_layout');
+      },
+      dynamicLayout() {
+        let grid = document.querySelector('.dynamic_layout');
 
-          if (btcPay.winWidth > 430) {
-            let msnry = new Masonry(grid, {
-              itemSelector: '.dynamic_layout__item',
-              columnWidth: '.dynamic_layout__item',
-              percentPosition: true,
-              horizontalOrder: true,
-            });
-          }
+        if (btcPay.winWidth > 430) {
+          let msnry = new Masonry(grid, {
+            itemSelector: '.dynamic_layout__item',
+            columnWidth: '.dynamic_layout__item',
+            percentPosition: true,
+            horizontalOrder: true,
+          });
         }
       },
       initUploadPhoto: function(e) {
