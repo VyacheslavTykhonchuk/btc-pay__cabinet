@@ -1600,3 +1600,30 @@ form#w2 {
 #currencies-form {
     height: 100%;
 }
+
+.main-tab-nav {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    width: max-content;
+
+    & + * {
+        margin-top: 2rem;
+    }
+
+    &__item {
+        padding: 1em;
+        color: black;
+        transition: all 0.2s;
+
+        &:hover {
+            background: hsla(0, 0%, 83%, 0.1);
+        }
+
+        & + * {
+            border-left: 1px solid hsla(0, 0%, 83%, 0.27);
+        }
+    }
+}

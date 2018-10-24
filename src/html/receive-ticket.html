@@ -1,0 +1,28 @@
+@@include('modules/html-head.html',{ "bodyClass": "convert-form-page", "pageTitle": "Convert" })
+@@include('modules/header.html',{
+"headerClass": "convert-form-page__header" })
+<div class="wrap">
+    <main class="aside_visible convert-form-page__main">
+            <nav class="main-tab-nav">
+                    <a href="" class="main-tab-nav__item">Convert</a>
+                    <a href="" class="main-tab-nav__item">Create Ticket</a>
+                    <a href="" class="main-tab-nav__item">Receive Ticket</a>
+                </nav>
+        <section class=" convert-form-page__section ">
+            <form class="convert-form main__section__item" action="">
+                <h1>Receive</h1>
+                <div class="convert-form__row">
+                    <div class="text-w-input">
+                        <div class="text-w-input__input">
+                            <input type="text" class="main__input" placeholder="$1999" name="" id="">
+                        </div>
+                    </div>
+                </div>
+                <div class="convert-form__row">
+                    <input type="submit" class="btn btn_big btn_big_gradient" value="Receive!">
+                </div>
+            </form>
+        </section>
+    </main>
+</div>
+@@include('modules/html-footer.html')
