@@ -311,6 +311,10 @@
 .auto-convert-setting {
     position: relative;
 
+    h3 + * {
+        margin-top: 11px !important;
+    }
+
     .custom_select {
         top: 37px;
     }
