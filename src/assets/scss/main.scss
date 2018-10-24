@@ -1113,18 +1113,23 @@ main {
     align-items: center;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.04);
     transition: all 0.4s;
+    border: 3px solid transparent;
 
     &.visible {
         transform: translate(-50%, 0%);
     }
 
     &_success {
+        border-color: $mainBlue;
+
         .popup__text {
             color: $mainBlue;
         }
     }
 
     &_error {
+        border-color: hsl(0, 100%, 50%);
+
         .popup__text {
             color: hsl(0, 100%, 50%);
         }
@@ -1582,4 +1587,8 @@ form#contact-form {
             margin-top: 1rem;
         }
     }
+}
+
+form#w2 {
+    display: flex;
 }
