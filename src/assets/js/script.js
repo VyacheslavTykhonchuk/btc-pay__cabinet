@@ -421,239 +421,46 @@
       },
       initMainGraph: function() {
         if (!$('.mainGraph').length) return false;
-        let initRange = '7';
-
+        let initRange = 7;
+        const oneWeekData = window.graphOneWeek;
+        const twoWeeksData = window.graphTwoWeeks;
+        const monthData = window.graphMonth;
         // test arr
-        const dateArr = [];
 
-        generateLabelsArr();
-        drawGraph(dateArr, initRange);
+        drawGraph(oneWeekData);
         findRange();
 
-        function generateLabelsArr() {
-          let date = new Date(),
-            month = date.getMonth(),
-            year = date.getFullYear(),
-            daysInCurrentMonth,
-            days;
-
-          daysInCurrentMonth = function() {
-            return new Date(year, month, 0).getDate();
-          };
-
-          days = daysInCurrentMonth();
-
-          for (let index = 1; index <= days; index++) {
-            let str = '';
-            if (month < 10) {
-              str = index + '/0' + month;
-            } else {
-              str = index + '/' + month;
-            }
-            dateArr.push(str);
-          }
-        }
         function findRange() {
           $('.fakeCheckbox').on('click', function() {
-            let newRange = $(this)
+            const newRange = $(this)
               .closest('.haveCheckbox')
               .attr('data-range');
+
             // clear old canvas
             $('.mainGraphCanvas').remove();
             $('.mainGraph').append('<canvas class="mainGraphCanvas"></canvas>');
-            //
-            drawGraph(dateArr, newRange);
+
+            if (newRange == 14) {
+              drawGraph(twoWeeksData);
+              window.bulletRadius = 8;
+            } else if (newRange > 25) {
+              drawGraph(monthData);
+              window.bulletRadius = 6;
+            } else {
+              drawGraph(oneWeekData);
+              window.bulletRadius = 10;
+            }
           });
         }
 
-        function drawGraph(arr, range) {
+        function drawGraph({ graphData, graphLabels }) {
           // make arr copy
-          let localArr = Array.from(arr);
-          let bulletRadius = 10;
-
-          // pop arr
-          while (localArr.length > +range) {
-            localArr.pop();
-          }
-          // dymanic bullet size
-          if (range == 14) {
-            bulletRadius = 8;
-          } else if (range > 25) {
-            bulletRadius = 6;
-          }
-
+          if (!window.graphDataSet) findRange();
           // graph initialization
           let ctx = $('.mainGraphCanvas');
           let data = {
-            labels: localArr,
-            datasets: [
-              {
-                label: 'BTC',
-                data: [
-                  2,
-                  1.5,
-                  1.7,
-                  1.8,
-                  1.9,
-                  2,
-                  2.1,
-                  2,
-                  1.5,
-                  1.7,
-                  1.8,
-                  1.9,
-                  2,
-                  2.1,
-                  2,
-                  1.5,
-                  1.7,
-                  1.8,
-                  1.9,
-                  2,
-                  2.1,
-                  2,
-                  1.5,
-                  1.7,
-                  1.8,
-                  1.9,
-                  2,
-                  2.1,
-                  2,
-                  1.5,
-                  1.7,
-                  1.8,
-                  1.9,
-                  2,
-                  2.1,
-                  2,
-                  1.5,
-                  1.7,
-                  1.8,
-                  1.9,
-                  2,
-                  2.1,
-                ],
-                borderWidth: 4,
-                pointBackgroundColor: 'hsl(47, 94%, 68%)',
-                pointBorderColor: 'hsl(0, 0%, 100%)',
-                pointBorderWidth: 3,
-                pointRadius: bulletRadius,
-                pointHoverRadius: 10,
-                cubicInterpolationMode: 'monotone',
-                backgroundColor: ['hsla(55, 94%, 54%,0.17)'],
-                borderColor: ['hsl(47, 94%, 68%)'],
-              },
-              {
-                label: 'EOS',
-                data: [
-                  3,
-                  2,
-                  2.3,
-                  2.6,
-                  2.7,
-                  2.8,
-                  3,
-                  3,
-                  2,
-                  2.3,
-                  2.6,
-                  2.7,
-                  2.8,
-                  3,
-                  3,
-                  2,
-                  2.3,
-                  2.6,
-                  2.7,
-                  2.8,
-                  3,
-                  2,
-                  2.3,
-                  2.6,
-                  2.7,
-                  2.8,
-                  3,
-                  3,
-                  2,
-                  2.3,
-                  2.6,
-                  2.7,
-                  2.8,
-                  3,
-                  3,
-                  2,
-                  2.3,
-                  2.6,
-                  2.7,
-                  2.8,
-                  3,
-                ],
-                borderWidth: 4,
-                pointBackgroundColor: 'hsl(191, 100%, 50%)',
-                pointBorderColor: 'hsl(0, 0%, 100%)',
-                pointBorderWidth: 3,
-                pointRadius: bulletRadius,
-                pointHoverRadius: 10,
-                cubicInterpolationMode: 'monotone',
-                backgroundColor: ['hsla(191, 100%, 50%,.15)'],
-                borderColor: ['hsl(191, 100%, 50%)'],
-              },
-              {
-                label: 'ETH',
-                data: [
-                  1,
-                  0.1,
-                  0.2,
-                  0.5,
-                  0.8,
-                  0.1,
-                  1,
-                  1,
-                  0.1,
-                  0.2,
-                  0.5,
-                  0.8,
-                  0.1,
-                  1,
-                  1,
-                  0.1,
-                  0.2,
-                  0.5,
-                  0.8,
-                  0.1,
-                  1,
-                  0.1,
-                  0.2,
-                  0.5,
-                  0.8,
-                  0.1,
-                  1,
-                  1,
-                  0.1,
-                  0.2,
-                  0.5,
-                  0.8,
-                  0.1,
-                  1,
-                  1,
-                  0.1,
-                  0.2,
-                  0.5,
-                  0.8,
-                  0.1,
-                  1,
-                ],
-                borderWidth: 4,
-                pointBackgroundColor: 'hsl(287, 100%, 48%)',
-                pointBorderColor: 'hsl(0, 0%, 100%)',
-                pointBorderWidth: 3,
-                pointRadius: bulletRadius,
-                pointHoverRadius: 10,
-                cubicInterpolationMode: 'monotone',
-                backgroundColor: ['hsla(287, 100%, 48%,0.15)'],
-                borderColor: ['hsl(287, 100%, 48%)'],
-              },
-            ],
+            labels: graphLabels,
+            datasets: graphData,
           };
           let options = {
             maintainAspectRatio: false,

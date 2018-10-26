@@ -1,5 +1,353 @@
-@@include('modules/html-head.html',{ "bodyClass": "stores stores_body", "pageTitle": "Stores Full History" }) @@include('modules/header.html',{
+@@include('modules/html-head.html',{ "bodyClass": "stores stores_body", "pageTitle": "Stores Full History" })
+@@include('modules/header.html',{
 "headerClass": "" })
+<script>
+    window.graphMonth = {
+        graphData: [
+            {
+                label: 'EOS',
+                data: [
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                ],
+                borderWidth: 4,
+                pointBackgroundColor: 'hsl(191, 100%, 50%)',
+                pointBorderColor: 'hsl(0, 0%, 100%)',
+                pointBorderWidth: 3,
+                pointRadius: window.bulletRadius,
+                pointHoverRadius: 10,
+                cubicInterpolationMode: 'monotone',
+                backgroundColor: ['hsla(191, 100%, 50%,.15)'],
+                borderColor: ['hsl(191, 100%, 50%)'],
+            },
+            {
+                label: 'ETH',
+                data: [
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                ],
+                borderWidth: 4,
+                pointBackgroundColor: 'hsl(287, 100%, 48%)',
+                pointBorderColor: 'hsl(0, 0%, 100%)',
+                pointBorderWidth: 3,
+                pointRadius: window.bulletRadius,
+                pointHoverRadius: 10,
+                cubicInterpolationMode: 'monotone',
+                backgroundColor: ['hsla(287, 100%, 48%,0.15)'],
+                borderColor: ['hsl(287, 100%, 48%)'],
+            },
+        ],
+        graphLabels: ["1/09", "2/09", "3/09", "4/09", "5/09", "6/09", "7/09", "8/09", "9/09", "10/09", "11/09", "12/09", "13/09", "14/09", "15/09", "16/09", "17/09", "18/09", "19/09", "20/09", "21/09", "22/09", "23/09", "24/09", "25/09", "26/09", "27/09", "28/09", "29/09", "30/09"]
+    }
+    window.graphTwoWeeks = {
+        graphData: [
+            {
+                label: 'EOS',
+                data: [
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                ],
+                borderWidth: 4,
+                pointBackgroundColor: 'hsl(191, 100%, 50%)',
+                pointBorderColor: 'hsl(0, 0%, 100%)',
+                pointBorderWidth: 3,
+                pointRadius: window.bulletRadius,
+                pointHoverRadius: 10,
+                cubicInterpolationMode: 'monotone',
+                backgroundColor: ['hsla(191, 100%, 50%,.15)'],
+                borderColor: ['hsl(191, 100%, 50%)'],
+            },
+            {
+                label: 'ETH',
+                data: [
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                ],
+                borderWidth: 4,
+                pointBackgroundColor: 'hsl(287, 100%, 48%)',
+                pointBorderColor: 'hsl(0, 0%, 100%)',
+                pointBorderWidth: 3,
+                pointRadius: window.bulletRadius,
+                pointHoverRadius: 10,
+                cubicInterpolationMode: 'monotone',
+                backgroundColor: ['hsla(287, 100%, 48%,0.15)'],
+                borderColor: ['hsl(287, 100%, 48%)'],
+            },
+        ],
+        graphLabels: ["1/09", "2/09", "3/09", "4/09", "5/09", "6/09", "7/09", "8/09", "9/09", "10/09", "11/09", "12/09", "13/09", "14/09", "15/09", "16/09", "17/09", "18/09", "19/09", "20/09", "21/09", "22/09", "23/09", "24/09", "25/09", "26/09", "27/09", "28/09", "29/09", "30/09"]
+    }
+    window.graphOneWeek = {
+        graphData: [
+            {
+                label: 'EOS',
+                data: [
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                    3,
+                    2,
+                    2.3,
+                    2.6,
+                    2.7,
+                    2.8,
+                    3,
+                ],
+                borderWidth: 4,
+                pointBackgroundColor: 'hsl(191, 100%, 50%)',
+                pointBorderColor: 'hsl(0, 0%, 100%)',
+                pointBorderWidth: 3,
+                pointRadius: window.bulletRadius,
+                pointHoverRadius: 10,
+                cubicInterpolationMode: 'monotone',
+                backgroundColor: ['hsla(191, 100%, 50%,.15)'],
+                borderColor: ['hsl(191, 100%, 50%)'],
+            },
+            {
+                label: 'ETH',
+                data: [
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                    1,
+                    0.1,
+                    0.2,
+                    0.5,
+                    0.8,
+                    0.1,
+                    1,
+                ],
+                borderWidth: 4,
+                pointBackgroundColor: 'hsl(287, 100%, 48%)',
+                pointBorderColor: 'hsl(0, 0%, 100%)',
+                pointBorderWidth: 3,
+                pointRadius: window.bulletRadius,
+                pointHoverRadius: 10,
+                cubicInterpolationMode: 'monotone',
+                backgroundColor: ['hsla(287, 100%, 48%,0.15)'],
+                borderColor: ['hsl(287, 100%, 48%)'],
+            },
+        ],
+        graphLabels: ["1/09", "2/09", "3/09", "4/09", "5/09", "6/09", "7/09", "8/09", "9/09", "10/09", "11/09", "12/09", "13/09", "14/09", "15/09", "16/09", "17/09", "18/09", "19/09", "20/09", "21/09", "22/09", "23/09", "24/09", "25/09", "26/09", "27/09", "28/09", "29/09", "30/09"]
+    }
+</script>
 <div class="wrap">
     <main class="aside_visible main__stores">
         <header class="main__stores__exchange_rates">
@@ -18,12 +366,14 @@
                     </div>
                     <div class="main__stores__exchange_rates__content__item__graphs">
                         <div class="main__stores__exchange_rates__content__item__graphs__graph">
-                            <svg width="54px" height="15px" viewBox="0 0 54 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <svg width="54px" height="15px" viewBox="0 0 54 15" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
                                 <desc>Created with Sketch.</desc>
                                 <defs></defs>
                                 <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="store" transform="translate(-240.000000, -175.000000)" stroke="#00D1FF" stroke-width="2">
+                                    <g id="store" transform="translate(-240.000000, -175.000000)" stroke="#00D1FF"
+                                        stroke-width="2">
                                         <g id="Group-4" transform="translate(149.000000, 175.000000)">
                                             <path d="M92,3.62944075 C98.129564,3.03397985 95.9878882,10.5495422 100.373626,10.5495422 C104.759364,10.5495422 103.573778,1 108.266723,1 C112.959668,1 112.070407,13.9057454 116.194606,13.9057454 C120.318805,13.9057454 120.483839,5.48062161 124.00824,5.48062161 C127.532641,5.48062161 126.879284,10.5495422 130.693022,10.5495422 C134.506761,10.5495422 133.443324,1 136.820199,1 C140.197073,1 140.916513,10.5495422 144.164558,10.5495422"
                                                 id="Path-5"></path>
@@ -54,12 +404,14 @@
                     <div class="main__stores__exchange_rates__content__item__graphs">
                         <div class="main__stores__exchange_rates__content__item__graphs__graph">
 
-                            <svg width="54px" height="12px" viewBox="0 0 54 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <svg width="54px" height="12px" viewBox="0 0 54 12" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
                                 <desc>Created with Sketch.</desc>
                                 <defs></defs>
                                 <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="store" transform="translate(-454.000000, -175.000000)" stroke="#00F8AB" stroke-width="2">
+                                    <g id="store" transform="translate(-454.000000, -175.000000)" stroke="#00F8AB"
+                                        stroke-width="2">
                                         <g id="Group-4" transform="translate(364.000000, 175.000000)">
                                             <path d="M91,3.62944075 C97.129564,3.03397985 94.9878882,7.54954222 99.3736263,7.54954222 C103.759364,7.54954222 102.573778,1 107.266723,1 C111.959668,1 111.070407,10.9057454 115.194606,10.9057454 C119.318805,10.9057454 119.483839,2.48062161 123.00824,2.48062161 C126.532641,2.48062161 125.879284,7.54954222 129.693022,7.54954222 C133.506761,7.54954222 132.443324,4 135.820199,4 C139.197073,4 139.916513,9.54954222 143.164558,9.54954222"
                                                 id="Path-5"></path>
@@ -89,12 +441,14 @@
                     </div>
                     <div class="main__stores__exchange_rates__content__item__graphs">
                         <div class="main__stores__exchange_rates__content__item__graphs__graph">
-                            <svg width="54px" height="15px" viewBox="0 0 54 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <svg width="54px" height="15px" viewBox="0 0 54 15" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
                                 <desc>Created with Sketch.</desc>
                                 <defs></defs>
                                 <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="store" transform="translate(-240.000000, -175.000000)" stroke="#00D1FF" stroke-width="2">
+                                    <g id="store" transform="translate(-240.000000, -175.000000)" stroke="#00D1FF"
+                                        stroke-width="2">
                                         <g id="Group-4" transform="translate(149.000000, 175.000000)">
                                             <path d="M92,3.62944075 C98.129564,3.03397985 95.9878882,10.5495422 100.373626,10.5495422 C104.759364,10.5495422 103.573778,1 108.266723,1 C112.959668,1 112.070407,13.9057454 116.194606,13.9057454 C120.318805,13.9057454 120.483839,5.48062161 124.00824,5.48062161 C127.532641,5.48062161 126.879284,10.5495422 130.693022,10.5495422 C134.506761,10.5495422 133.443324,1 136.820199,1 C140.197073,1 140.916513,10.5495422 144.164558,10.5495422"
                                                 id="Path-5"></path>
@@ -125,12 +479,14 @@
                     <div class="main__stores__exchange_rates__content__item__graphs">
                         <div class="main__stores__exchange_rates__content__item__graphs__graph">
 
-                            <svg width="54px" height="12px" viewBox="0 0 54 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <svg width="54px" height="12px" viewBox="0 0 54 12" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
                                 <desc>Created with Sketch.</desc>
                                 <defs></defs>
                                 <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="store" transform="translate(-454.000000, -175.000000)" stroke="#00F8AB" stroke-width="2">
+                                    <g id="store" transform="translate(-454.000000, -175.000000)" stroke="#00F8AB"
+                                        stroke-width="2">
                                         <g id="Group-4" transform="translate(364.000000, 175.000000)">
                                             <path d="M91,3.62944075 C97.129564,3.03397985 94.9878882,7.54954222 99.3736263,7.54954222 C103.759364,7.54954222 102.573778,1 107.266723,1 C111.959668,1 111.070407,10.9057454 115.194606,10.9057454 C119.318805,10.9057454 119.483839,2.48062161 123.00824,2.48062161 C126.532641,2.48062161 125.879284,7.54954222 129.693022,7.54954222 C133.506761,7.54954222 132.443324,4 135.820199,4 C139.197073,4 139.916513,9.54954222 143.164558,9.54954222"
                                                 id="Path-5"></path>
@@ -160,12 +516,14 @@
                     </div>
                     <div class="main__stores__exchange_rates__content__item__graphs">
                         <div class="main__stores__exchange_rates__content__item__graphs__graph">
-                            <svg width="54px" height="15px" viewBox="0 0 54 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <svg width="54px" height="15px" viewBox="0 0 54 15" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
                                 <desc>Created with Sketch.</desc>
                                 <defs></defs>
                                 <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="store" transform="translate(-240.000000, -175.000000)" stroke="#00D1FF" stroke-width="2">
+                                    <g id="store" transform="translate(-240.000000, -175.000000)" stroke="#00D1FF"
+                                        stroke-width="2">
                                         <g id="Group-4" transform="translate(149.000000, 175.000000)">
                                             <path d="M92,3.62944075 C98.129564,3.03397985 95.9878882,10.5495422 100.373626,10.5495422 C104.759364,10.5495422 103.573778,1 108.266723,1 C112.959668,1 112.070407,13.9057454 116.194606,13.9057454 C120.318805,13.9057454 120.483839,5.48062161 124.00824,5.48062161 C127.532641,5.48062161 126.879284,10.5495422 130.693022,10.5495422 C134.506761,10.5495422 133.443324,1 136.820199,1 C140.197073,1 140.916513,10.5495422 144.164558,10.5495422"
                                                 id="Path-5"></path>
@@ -196,12 +554,14 @@
                     <div class="main__stores__exchange_rates__content__item__graphs">
                         <div class="main__stores__exchange_rates__content__item__graphs__graph">
 
-                            <svg width="54px" height="12px" viewBox="0 0 54 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <svg width="54px" height="12px" viewBox="0 0 54 12" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
                                 <desc>Created with Sketch.</desc>
                                 <defs></defs>
                                 <g id="dashboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <g id="store" transform="translate(-454.000000, -175.000000)" stroke="#00F8AB" stroke-width="2">
+                                    <g id="store" transform="translate(-454.000000, -175.000000)" stroke="#00F8AB"
+                                        stroke-width="2">
                                         <g id="Group-4" transform="translate(364.000000, 175.000000)">
                                             <path d="M91,3.62944075 C97.129564,3.03397985 94.9878882,7.54954222 99.3736263,7.54954222 C103.759364,7.54954222 102.573778,1 107.266723,1 C111.959668,1 111.070407,10.9057454 115.194606,10.9057454 C119.318805,10.9057454 119.483839,2.48062161 123.00824,2.48062161 C126.532641,2.48062161 125.879284,7.54954222 129.693022,7.54954222 C133.506761,7.54954222 132.443324,4 135.820199,4 C139.197073,4 139.916513,9.54954222 143.164558,9.54954222"
                                                 id="Path-5"></path>
@@ -228,7 +588,8 @@
                     <h3>One week</h3>
                     <div class="graphMenu">
                         <div class="openGraphMenu">
-                            <svg width="14px" height="14px" viewBox="0 0 31 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <svg width="14px" height="14px" viewBox="0 0 31 23" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
                                 <desc>Created with Sketch.</desc>
                                 <defs></defs>
@@ -276,7 +637,8 @@
                                 </div>
                             </div>
                             <div class="closeGraphMenu">
-                                <svg width="10px" height="10px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <svg width="10px" height="10px" viewBox="0 0 19 18" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
                                     <desc>Created with Sketch.</desc>
                                     <defs></defs>
@@ -307,17 +669,28 @@
                 </header>
                 <div class="main__stores__content__history__content">
                     <ul class="main__stores__content__history__content__list">
-                        <li class="main__stores__content__history__content__list__item bullet bullet_blue">BTC - 0.1231243259</li>
-                        <li class="main__stores__content__history__content__list__item bullet bullet_pink">ETH - 0.1231243259</li>
-                        <li class="main__stores__content__history__content__list__item bullet bullet_orange">LTC - 0.1231243259</li>
-                        <li class="main__stores__content__history__content__list__item circle circle_green">LTC - 0.1231243259</li>
-                        <li class="main__stores__content__history__content__list__item circle circle_green">LTC - 0.1231243259</li>
-                        <li class="main__stores__content__history__content__list__item circle circle_green">LTC - 0.1231243259</li>
-                        <li class="main__stores__content__history__content__list__item circle circle_blue">LTC - 0.1231243259</li>
-                        <li class="main__stores__content__history__content__list__item circle circle_blue">LTC - 0.1231243259</li>
-                        <li class="main__stores__content__history__content__list__item circle circle_blue">LTC - 0.1231243259</li>
-                        <li class="main__stores__content__history__content__list__item circle circle_blue">LTC - 0.1231243259</li>
-                        <li class="main__stores__content__history__content__list__item circle circle_blue">LTC - 0.1231243259</li>
+                        <li class="main__stores__content__history__content__list__item bullet bullet_blue">BTC -
+                            0.1231243259</li>
+                        <li class="main__stores__content__history__content__list__item bullet bullet_pink">ETH -
+                            0.1231243259</li>
+                        <li class="main__stores__content__history__content__list__item bullet bullet_orange">LTC -
+                            0.1231243259</li>
+                        <li class="main__stores__content__history__content__list__item circle circle_green">LTC -
+                            0.1231243259</li>
+                        <li class="main__stores__content__history__content__list__item circle circle_green">LTC -
+                            0.1231243259</li>
+                        <li class="main__stores__content__history__content__list__item circle circle_green">LTC -
+                            0.1231243259</li>
+                        <li class="main__stores__content__history__content__list__item circle circle_blue">LTC -
+                            0.1231243259</li>
+                        <li class="main__stores__content__history__content__list__item circle circle_blue">LTC -
+                            0.1231243259</li>
+                        <li class="main__stores__content__history__content__list__item circle circle_blue">LTC -
+                            0.1231243259</li>
+                        <li class="main__stores__content__history__content__list__item circle circle_blue">LTC -
+                            0.1231243259</li>
+                        <li class="main__stores__content__history__content__list__item circle circle_blue">LTC -
+                            0.1231243259</li>
                     </ul>
                 </div>
                 <div class="main__stores__total">
@@ -326,55 +699,54 @@
                     <span>EUR - 31 000</span>
                 </div>
             </section>
-            
+
             <section class="main__stores__content__stores  main__section__item__col_1-3">
-                    <a class="main__stores__content__stores__item main__stores__content__stores__item__add main__section__item">
-                            <svg xmlns="http://www.w3.org/2000/svg" height='52' width='52' xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-                                x="0px" y="0px" viewBox="0 0 52 52" style="enable-background:new 0 0 52 52;" xml:space="preserve">
-                                <g>
-                                    <path fill='#D8D8D8' d="M26,0C11.664,0,0,11.663,0,26s11.664,26,26,26s26-11.663,26-26S40.336,0,26,0z M26,50C12.767,50,2,39.233,2,26   S12.767,2,26,2s24,10.767,24,24S39.233,50,26,50z"
-                                    />
-                                    <path fill='#D8D8D8' d="M38.5,25H27V14c0-0.553-0.448-1-1-1s-1,0.447-1,1v11H13.5c-0.552,0-1,0.447-1,1s0.448,1,1,1H25v12c0,0.553,0.448,1,1,1   s1-0.447,1-1V27h11.5c0.552,0,1-0.447,1-1S39.052,25,38.5,25z"
-                                    />
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                                <g>
-                                </g>
-                            </svg>
-                            <p>Connect new store</p>
-                        </a>
+                <a class="main__stores__content__stores__item main__stores__content__stores__item__add main__section__item">
+                    <svg xmlns="http://www.w3.org/2000/svg" height='52' width='52' xmlns:xlink="http://www.w3.org/1999/xlink"
+                        version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 52 52" style="enable-background:new 0 0 52 52;"
+                        xml:space="preserve">
+                        <g>
+                            <path fill='#D8D8D8' d="M26,0C11.664,0,0,11.663,0,26s11.664,26,26,26s26-11.663,26-26S40.336,0,26,0z M26,50C12.767,50,2,39.233,2,26   S12.767,2,26,2s24,10.767,24,24S39.233,50,26,50z" />
+                            <path fill='#D8D8D8' d="M38.5,25H27V14c0-0.553-0.448-1-1-1s-1,0.447-1,1v11H13.5c-0.552,0-1,0.447-1,1s0.448,1,1,1H25v12c0,0.553,0.448,1,1,1   s1-0.447,1-1V27h11.5c0.552,0,1-0.447,1-1S39.052,25,38.5,25z" />
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                    </svg>
+                    <p>Connect new store</p>
+                </a>
                 <div class="main__stores__content__stores__item main__section__item">
                     <span>E-commerce store</span>
                     <a class="btn btn_big btn_big_gradient" href="#">Setting</a>
                 </div>
-               
+
             </section>
         </section>
     </main>
