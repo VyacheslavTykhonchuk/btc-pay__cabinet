@@ -1644,3 +1644,14 @@ form#w2 {
     position: relative;
     z-index: 999;
 }
+
+.delete_transaction_btn {
+    background: hsl(0, 100%, 50%);
+    color: hsl(0, 0%, 100%);
+    padding: .4em .8em;
+    border-radius: 5px;
+
+    &:hover {
+        background: hsl(0, 100%, 40%);
+    }
+}
