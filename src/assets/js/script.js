@@ -456,7 +456,6 @@
         function drawGraph({ graphData, graphLabels }) {
           // make arr copy
           if (!window.graphDataSet) findRange();
-          // graph initialization
           let ctx = $('.mainGraphCanvas');
           let data = {
             labels: graphLabels,
@@ -488,13 +487,6 @@
                     fontFamily: 'CoreSansG',
                     fontSize: 12,
                     fontColor: 'hsla(0, 0%, 11%,0.5)',
-                    // callback: function (value, index, values) {
-                    //     if (index == 0) {
-                    //         return null;
-                    //     } else {
-                    //         return index;
-                    //     }
-                    // }
                   },
                 },
               ],
@@ -506,7 +498,6 @@
                   pointLabels: false,
                   ticks: {
                     min: 0,
-                    max: 3.2,
                     stepSize: 1,
                     beginAtZero: true,
                     callback: function(value, index, values) {
@@ -548,3 +539,4 @@ function showPopup(obj) {
     el.classList.remove('visible');
   }, 5000);
 }
+
